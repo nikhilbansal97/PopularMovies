@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="parallaxscroll-1.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/8761038c4ab642bb2fa859ac3ca4f9188cfacf2b/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/8761038c4ab642bb2fa859ac3ca4f9188cfacf2b/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.nirhart/parallaxscroll/1.0/8dad3132c50efee262ae117976e9218e65769ffc/parallaxscroll-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

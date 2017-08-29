@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PopularMovies</string>
+    <string name="ratings">Ratings</string>
+    <string name="storyline">Story line</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="menu_popular_movies">Popular Movies</string>
+    <string name="menu_highest_rated">Highest Rated</string>
+</resources>

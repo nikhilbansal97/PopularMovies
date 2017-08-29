@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Movies"
+        android:id="@+id/menu_title_movies">
+        <menu>
+            <item
+                android:id="@+id/menu_popular_movies"
+                android:icon="@drawable/flame"
+                android:title="Popular Movies" />
+            <item
+                android:id="@+id/menu_top_rated"
+                android:icon="@drawable/favorite"
+                android:title="Top Rated" />
+        </menu>
+    </item>
+    <item android:title="TV Shows"
+        android:id="@+id/menu_title_tvShows">
+        <menu>
+            <item
+                android:id="@+id/menu_popular_shows"
+                android:icon="@drawable/flame"
+                android:title="Popular TV Shows" />
+            <item
+                android:id="@+id/menu_top_rated_shows"
+                android:icon="@drawable/favorite"
+                android:title="Top Rated TV Shows" />
+        </menu>
+    </item>
+</menu>
