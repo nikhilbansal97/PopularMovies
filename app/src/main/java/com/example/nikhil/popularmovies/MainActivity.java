@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
     private NavigationView navigationView;
     private TvAdapter tvAdapter;
     private String data_type;
+    private long visibleItemIndex = 0;
+    private GridLayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
                 movies = savedInstanceState.getParcelableArrayList("movies_list");
             else
                 tvShows = savedInstanceState.getParcelableArrayList("tv_list");
+            visibleItemIndex = savedInstanceState.getLong("index");
             progressBar.setVisibility(View.GONE);
         }
         getSupportActionBar().setElevation(0);
@@ -80,7 +83,9 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        layoutManager = new GridLayoutManager(this,2);
+        layoutManager.scrollToPosition((int) visibleItemIndex);
+        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         adapter = new MovieAdapter(this,this,movies);
         tvAdapter = new TvAdapter(this,this,tvShows);
@@ -244,6 +249,8 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
             outState.putString("data_type","movies");
             outState.putParcelableArrayList("movies_list", (ArrayList<Results>) movies);
         }
+        long index = layoutManager.findFirstCompletelyVisibleItemPosition();
+        outState.putLong("index",index);
     }
 
     /**

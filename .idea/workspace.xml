@@ -10,50 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7449b8e5-aef2-417a-b750-d760c0c723e9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_26_0_0_beta2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/annotations_4_0_0_RC1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_26_0_0_beta2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/butterknife_8_7_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/butterknife_annotations_8_7_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/cardview_v7_26_0_0_beta2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/circleimageview_2_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/constraint_layout_1_0_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/constraint_layout_solver_1_0_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/converter_gson_2_3_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/design_26_0_0_beta2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/disklrucache_4_0_0_RC1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/gifdecoder_4_0_0_RC1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/glide_4_0_0_RC1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_core_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_integration_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_library_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/javawriter_2_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/javax_annotation_api_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/javax_inject_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jsr305_2_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/okhttp_3_8_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/okio_1_13_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/parallaxscroll_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/picasso_2_5_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_26_0_0_beta2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/retrofit_2_3_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_26_0_0_beta2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_compat_26_0_0_beta2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_ui_26_0_0_beta2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_utils_26_0_0_beta2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_fragment_26_0_0_beta2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_media_compat_26_0_0_beta2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_26_0_0_beta2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_26_0_0_beta2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/transition_26_0_0_beta2.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java" />
     </list>
     <ignored path="PopularMovies.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,24 +49,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="44" column="42" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
+            <state relative-caret-position="157">
+              <caret line="210" column="64" selection-start-line="210" selection-start-column="64" selection-end-line="210" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list_item.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="list_item.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item.xml">
           <provider editor-type-id="android-designer2">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+            <state relative-caret-position="80">
+              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -2077,8 +2036,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/MovieAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/PhotosAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/TvAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -2359,9 +2318,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2373,6 +2329,9 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2382,8 +2341,8 @@
     <property name="android.project.structure.last.selected" value="Project" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="device.picker.selection" value="Nexus_5X_API_26" />
-    <property name="SearchEverywhereHistoryKey" value="deta&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/res/layout/activity_detail.xml&#10;detail&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java&#10;main&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java&#10;api&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiInterface.java&#10;Main&#9;PSI&#9;JAVA://com.example.nikhil.popularmovies.MainActivity&#10;Movie&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Adapters/MovieAdapter.java&#10;TvAdap&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Adapters/TvAdapter.java&#10;activi&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java&#10;inspect&#9;ACTION&#9;InspectCode&#10;settin&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/settings.gradle&#10;inter&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiInterface.java&#10;Tv&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/pojos/tv/TvResults.java&#10;MOvieDeta&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/pojos/MovieDetail.java&#10;Detail&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java&#10;cast&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Adapters/CastAdapter.java&#10;Deta&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java&#10;ap&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiInterface.java&#10;build&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/build.gradle" />
+    <property name="device.picker.selection" value="b15c9076" />
+    <property name="SearchEverywhereHistoryKey" value="main&#9;FILE&#9;file:///home/nikhil/Desktop/AND/AND PROJECTS/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java&#10;deta&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/res/layout/activity_detail.xml&#10;detail&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java&#10;api&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiInterface.java&#10;Main&#9;PSI&#9;JAVA://com.example.nikhil.popularmovies.MainActivity&#10;Movie&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Adapters/MovieAdapter.java&#10;TvAdap&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Adapters/TvAdapter.java&#10;activi&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java&#10;inspect&#9;ACTION&#9;InspectCode&#10;settin&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/settings.gradle&#10;inter&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiInterface.java&#10;Tv&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/pojos/tv/TvResults.java&#10;MOvieDeta&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/pojos/MovieDetail.java&#10;Detail&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java&#10;cast&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Adapters/CastAdapter.java&#10;Deta&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java&#10;ap&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiInterface.java&#10;build&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/build.gradle" />
     <property name="VectorAssetImportPath" value="$PROJECT_DIR$/../../../my-icons-collection" />
   </component>
   <component name="RecentsManager">
@@ -2803,9 +2762,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.67171717" sideWeight="0.5121029" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.86026937" sideWeight="0.48789713" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27912253" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27912253" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2815,8 +2774,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3956229" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3956229" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3163,7 +3122,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="20" column="76" selection-start-line="20" selection-start-column="76" selection-end-line="20" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3202,21 +3160,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="44" column="42" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        <state relative-caret-position="80">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="210" column="64" selection-start-line="210" selection-start-column="64" selection-end-line="210" selection-end-column="64" />
           <folding />
         </state>
       </provider>
