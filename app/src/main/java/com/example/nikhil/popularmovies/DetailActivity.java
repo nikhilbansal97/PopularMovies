@@ -121,7 +121,6 @@ public class DetailActivity extends AppCompatActivity {
         else
             getTvDetails(id);
         credits = getCredits(id);
-        getVideos(id);
         mPhotosList = new ArrayList<>();
         mGenresList = new ArrayList<>();
         mCastList = new ArrayList<>();
@@ -160,6 +159,7 @@ public class DetailActivity extends AppCompatActivity {
         inflator.inflate(R.layout.activity_detail, parentView,true);
         ButterKnife.bind(this);
         imageViewMoviePoster.setImageAlpha(150);
+        getVideos(id);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
