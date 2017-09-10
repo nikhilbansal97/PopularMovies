@@ -13,7 +13,9 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,11 +25,11 @@ import com.example.nikhil.popularmovies.Adapters.GenreAdapter;
 import com.example.nikhil.popularmovies.Adapters.PhotosAdapter;
 import com.example.nikhil.popularmovies.Retrofit.ApiClient;
 import com.example.nikhil.popularmovies.Retrofit.ApiInterface;
-import com.example.nikhil.popularmovies.pojos.movie_images.Backdrops;
 import com.example.nikhil.popularmovies.pojos.movie_details.Cast;
-import com.example.nikhil.popularmovies.pojos.movie_details.Genres;
 import com.example.nikhil.popularmovies.pojos.movie_details.Credits;
+import com.example.nikhil.popularmovies.pojos.movie_details.Genres;
 import com.example.nikhil.popularmovies.pojos.movie_details.MovieDetail;
+import com.example.nikhil.popularmovies.pojos.movie_images.Backdrops;
 import com.example.nikhil.popularmovies.pojos.movie_videos.VideoResults;
 import com.example.nikhil.popularmovies.pojos.movie_videos.Videos;
 import com.example.nikhil.popularmovies.pojos.tv.TvDetails;
@@ -87,17 +89,21 @@ public class DetailActivity extends AppCompatActivity {
     private ApiInterface apiInterface;
     private CastAdapter castAdapter;
     private String data_type;
+    private LayoutInflater inflator;
+    private ViewGroup parentView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
-        ButterKnife.bind(this);
+        setContentView(R.layout.activity_detail_view);
+        inflator = LayoutInflater.from(this);
+        parentView = findViewById(R.id.parent_detail_fragment);
+
+        inflator.inflate(R.layout.loading_view, parentView,true);
         mContext = this;
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        imageViewMoviePoster.setImageAlpha(150);
 
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
         credits = new Credits();
@@ -115,7 +121,6 @@ public class DetailActivity extends AppCompatActivity {
         else
             getTvDetails(id);
         credits = getCredits(id);
-        getVideos(id);
         mPhotosList = new ArrayList<>();
         mGenresList = new ArrayList<>();
         mCastList = new ArrayList<>();
@@ -123,18 +128,6 @@ public class DetailActivity extends AppCompatActivity {
         mAdapter = new PhotosAdapter(this, mPhotosList);
         mGenreAdapter = new GenreAdapter(this, mGenresList);
         castAdapter = new CastAdapter(this, mCastList);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(mAdapter);
-
-        recyclerViewGenre.setAdapter(mGenreAdapter);
-        recyclerViewGenre.setItemAnimator(new DefaultItemAnimator());
-        recyclerViewGenre.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-
-        recyclerViewCrew.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false));
-        recyclerViewCrew.setItemAnimator(new DefaultItemAnimator());
-        recyclerViewCrew.setAdapter(castAdapter);
 
     }
 
@@ -162,6 +155,24 @@ public class DetailActivity extends AppCompatActivity {
      * @param detail : TvDetails object which contains the details of the tv show.
      */
     private void updateTvUi(TvDetails detail) {
+        parentView.removeAllViews();
+        inflator.inflate(R.layout.activity_detail, parentView,true);
+        ButterKnife.bind(this);
+        imageViewMoviePoster.setImageAlpha(150);
+        getVideos(id);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(mAdapter);
+
+        recyclerViewGenre.setAdapter(mGenreAdapter);
+        recyclerViewGenre.setItemAnimator(new DefaultItemAnimator());
+        recyclerViewGenre.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        recyclerViewCrew.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false));
+        recyclerViewCrew.setItemAnimator(new DefaultItemAnimator());
+        recyclerViewCrew.setAdapter(castAdapter);
+
         Picasso.with(mContext).load("https://image.tmdb.org/t/p/w500" + detail.getBackdrop_path()).into(imageViewMoviePoster);
         Picasso.with(mContext).load("https://image.tmdb.org/t/p/w500" + image_url_short).centerCrop().resize(225, 400).into(imageViewMoviePosterSmall);
         textViewMovieTitle.setText(detail.getOriginal_name());
@@ -244,7 +255,6 @@ public class DetailActivity extends AppCompatActivity {
                     cast = credits.getCast();
                 updateCast(cast);
             }
-
             @Override
             public void onFailure(Call<Credits> call, Throwable t) {
                 Log.d(TAG, "onFailure: Failed to fetch data");
@@ -302,6 +312,22 @@ public class DetailActivity extends AppCompatActivity {
      * @param detail : MovieDetail object which contains the movie details.
      */
     private void updateUi(MovieDetail detail) {
+        parentView.removeAllViews();
+        inflator.inflate(R.layout.activity_detail, parentView,true);
+        ButterKnife.bind(this);
+        imageViewMoviePoster.setImageAlpha(150);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(mAdapter);
+
+        recyclerViewGenre.setAdapter(mGenreAdapter);
+        recyclerViewGenre.setItemAnimator(new DefaultItemAnimator());
+        recyclerViewGenre.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        recyclerViewCrew.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false));
+        recyclerViewCrew.setItemAnimator(new DefaultItemAnimator());
+        recyclerViewCrew.setAdapter(castAdapter);
         textViewMovieRuntimeValue.setVisibility(View.VISIBLE);
         Picasso.with(mContext).load("https://image.tmdb.org/t/p/w500" + detail.getBackdrop_path()).into(imageViewMoviePoster);
         Picasso.with(mContext).load("https://image.tmdb.org/t/p/w500" + image_url_short).centerCrop().resize(225, 400).into(imageViewMoviePosterSmall);

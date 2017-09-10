@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/parent_parallax_detail"
     android:background="#EEEEEE">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -11,6 +12,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/parent_Detail_Activity"
         tools:context="com.example.nikhil.popularmovies.DetailActivity">
 
         <ImageView
