@@ -255,7 +255,6 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
         }
         long index = layoutManager.findFirstCompletelyVisibleItemPosition();
         outState.putLong("index",index);
-        Log.d(TAG, "onSaveInstanceState: " + recyclerView.toString());
     }
 
     /**
