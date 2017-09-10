@@ -28,6 +28,7 @@ import com.example.nikhil.popularmovies.pojos.movie.Response;
 import com.example.nikhil.popularmovies.pojos.movie.Results;
 import com.example.nikhil.popularmovies.pojos.tv.PopularTv;
 import com.example.nikhil.popularmovies.pojos.tv.TvResults;
+import com.facebook.stetho.Stetho;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.VISIBLE);
         movies = new ArrayList<>();
         tvShows = new ArrayList<>();
         if(savedInstanceState != null)
@@ -81,6 +83,9 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
         drawer.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        /** Setup Stetho Library */
+        Stetho.initializeWithDefaults(this);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         layoutManager = new GridLayoutManager(this,2);
@@ -160,7 +165,6 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
      * @param path : Filter the tv shows according to popularity or top_rated.
      */
     public void getTv(String path){
-        progressBar.setVisibility(View.VISIBLE);
         ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
         Call<PopularTv> call = apiInterface.getTv(path,API_KEY);
         call.enqueue(new Callback<PopularTv>() {
@@ -178,9 +182,9 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
                             tvShows.remove(i);
                     }
                 }
-
                 recyclerView.setAdapter(tvAdapter);
                 tvAdapter.notifyDataSetChanged();
+                progressBar.setVisibility(View.GONE);
                 Log.d(TAG, "onResponse: "+recyclerView.toString());
             }
 
@@ -189,7 +193,7 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
                 Log.d(TAG, "onFailure: Failed to get TV shows!");
             }
         });
-        progressBar.setVisibility(View.GONE);
+        //progressBar.setVisibility(View.GONE);
     }
 
     /**
@@ -197,7 +201,6 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
      * @param sort_by : Filter movies either by popular or top_rated.
      */
     public void getMovies(String sort_by){
-        progressBar.setVisibility(View.VISIBLE);
         ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
         Call<Response> call = apiInterface.getMovies(sort_by,API_KEY);
         call.enqueue(new Callback<Response>() {
@@ -216,6 +219,7 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
                 }
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override
@@ -223,7 +227,7 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
                 Log.v(TAG , "onFailure()");
             }
         });
-        progressBar.setVisibility(View.GONE);
+       // progressBar.setVisibility(View.GONE);
     }
 
     @Override
@@ -251,6 +255,7 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
         }
         long index = layoutManager.findFirstCompletelyVisibleItemPosition();
         outState.putLong("index",index);
+        Log.d(TAG, "onSaveInstanceState: " + recyclerView.toString());
     }
 
     /**
