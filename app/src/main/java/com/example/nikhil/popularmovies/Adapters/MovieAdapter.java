@@ -45,7 +45,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
     public void onBindViewHolder(ViewHolder holder, int position) {
         final Results movie = mList.get(position);
         Glide.with(mContext).load("https://image.tmdb.org/t/p/w500"+movie.getPoster_path()).into(holder.movie_poster);
-        //Picasso.with(mContext).load("https://image.tmdb.org/t/p/w500"+movie.getPoster_path()).into(holder.movie_poster);
         holder.movie_poster.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -2,6 +2,8 @@ package com.example.nikhil.popularmovies;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -18,6 +20,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.nikhil.popularmovies.Adapters.MovieAdapter;
@@ -54,15 +57,18 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
     private String data_type;
     private long visibleItemIndex = 0;
     private GridLayoutManager layoutManager;
+    private TextView textView_networkOffline;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        textView_networkOffline = (TextView) findViewById(R.id.textView_networkOffline);
         progressBar.setVisibility(View.VISIBLE);
         movies = new ArrayList<>();
         tvShows = new ArrayList<>();
+
         if(savedInstanceState != null)
         {
             data_type = savedInstanceState.getString("data_type");
@@ -94,6 +100,19 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         adapter = new MovieAdapter(this,this,movies);
         tvAdapter = new TvAdapter(this,this,tvShows);
+
+        // Check for network connectivity
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetorkInfo = connectivityManager.getActiveNetworkInfo();
+        if(activeNetorkInfo != null && !activeNetorkInfo.isConnected())
+        {
+            progressBar.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.GONE);
+            textView_networkOffline.setVisibility(View.VISIBLE);
+        } else  {
+            textView_networkOffline.setVisibility(View.GONE);
+        }
+
         if(savedInstanceState != null)
         {
             if(!data_type.equals("movies"))
@@ -193,7 +212,6 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
                 Log.d(TAG, "onFailure: Failed to get TV shows!");
             }
         });
-        //progressBar.setVisibility(View.GONE);
     }
 
     /**
@@ -227,7 +245,6 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
                 Log.v(TAG , "onFailure()");
             }
         });
-       // progressBar.setVisibility(View.GONE);
     }
 
     @Override

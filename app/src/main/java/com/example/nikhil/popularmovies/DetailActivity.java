@@ -35,6 +35,8 @@ import com.example.nikhil.popularmovies.pojos.movie_videos.Videos;
 import com.example.nikhil.popularmovies.pojos.tv.TvDetails;
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,6 +83,8 @@ public class DetailActivity extends AppCompatActivity {
     TextView textViewMovieCastTitle;
     @BindView(R.id.recyclerView_crew)
     RecyclerView recyclerViewCrew;
+    @BindView(R.id.textView_movie_releaseDate)
+    TextView textViewMovieReleaseDate;
     private PhotosAdapter mAdapter;
     private List<Backdrops> mPhotosList;
     private List<Genres> mGenresList;
@@ -205,9 +209,11 @@ public class DetailActivity extends AppCompatActivity {
             public void onResponse(Call<Videos> call, Response<Videos> response) {
                 Videos videos = response.body();
                 List<VideoResults> results = new ArrayList<>();
-                results = videos.getResults();
-                if(results != null && results.size() > 0)
-                    updateVideo(results.get(0));
+                if (videos != null) {
+                    results = videos.getResults();
+                    if (results != null && results.size() > 0)
+                        updateVideo(results.get(0));
+                }
             }
 
             @Override
@@ -342,5 +348,14 @@ public class DetailActivity extends AppCompatActivity {
         mGenresList.addAll(detail.getGenres());
         mGenreAdapter.notifyDataSetChanged();
         textViewMovieRuntimeValue.setText(detail.getRuntime());
+        SimpleDateFormat oldDate = new SimpleDateFormat("yyyy-dd-mm");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy ");
+        String date = detail.getRelease_date();
+        try {
+            date = dateFormat.format(oldDate.parse(date));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        textViewMovieReleaseDate.setText(date);
     }
 }

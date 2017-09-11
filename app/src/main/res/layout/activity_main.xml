@@ -12,6 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/textView_networkOffline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Internet not connected!\nTry again later"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textSize="25dp"/>
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"

@@ -35,7 +35,6 @@ public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.PhotoHolde
     @Override
     public void onBindViewHolder(PhotoHolder holder, int position) {
         Backdrops image = mList.get(position);
-        //Picasso.with(mContext).load("https://image.tmdb.org/t/p/w500" + image.getFile_path()).centerCrop().resize(400,225).into(holder.photoView);
         Glide.with(mContext).load("https://image.tmdb.org/t/p/w500" + image.getFile_path()).into(holder.photoView);
     }
 
