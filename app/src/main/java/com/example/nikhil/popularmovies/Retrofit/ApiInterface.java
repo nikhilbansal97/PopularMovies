@@ -28,7 +28,6 @@ public interface ApiInterface {
     Call<Response> getMovies(@Path("movie") String sort,
                              @Query("api_key") String key);
 
-
     /**
      * GET method for getting list of tv shows.
      * @param tv : Filter tv shows according to popular ot top_rated.
