@@ -53,6 +53,12 @@ public class Results implements Parcelable {
     @SerializedName("popularity")
     private String popularity;
 
+    public Results(String id, String image, String title){
+        this.id = id;
+        poster_path = image;
+        this.title = title;
+    }
+
     protected Results(Parcel in) {
         vote_average = in.readString();
         backdrop_path = in.readString();

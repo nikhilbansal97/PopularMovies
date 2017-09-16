@@ -2,7 +2,6 @@ package com.example.nikhil.popularmovies.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,7 +42,6 @@ public class TvAdapter extends RecyclerView.Adapter<TvAdapter.TvViewHolder>{
     public void onBindViewHolder(TvViewHolder holder, int position) {
         final TvResults result = tvShows.get(position);
         Glide.with(context).load("https://image.tmdb.org/t/p/w500"+result.getPoster_path()).into(holder.imageView);
-        Log.d(TAG, result.getOriginal_name());
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

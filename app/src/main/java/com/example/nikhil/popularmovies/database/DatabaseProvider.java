@@ -29,7 +29,7 @@ public class DatabaseProvider {
                 path = "movie/#",
                 type = "vnd.content.cursor.item",
                 name = "MOVIE_ID",
-                whereColumn = MovieTable.COLUMN_ID,
+                whereColumn = MovieTable.COLUMN_MOVIE_ID,
                 pathSegment = 1)
         public static Uri withId(String id){
             return Uri.parse("content://" + AUTHORITY + "/movie/" + id);
@@ -49,7 +49,7 @@ public class DatabaseProvider {
                 path = "tv/#",
                 type = "vnd.content.cursor.item",
                 name = "TV_ID",
-                whereColumn = TvTable.COLUMN_ID,
+                whereColumn = TvTable.COLUMN_TEXT,
                 pathSegment = 1)
         public static Uri withId(String id){
             return Uri.parse("content://" + AUTHORITY + "/tv/" + id);

@@ -46,6 +46,8 @@ public class VideosAdapter extends RecyclerView.Adapter<VideosAdapter.VideoHolde
     public void onBindViewHolder(VideoHolder holder, int position) {
         final VideoResults videoResult = mList.get(position);
         holder.videoView.setImageAlpha(120);
+        Log.d(TAG, "onBindViewHolder: " + mPhotosList.size());
+        Log.d(TAG, "onBindViewHolder: " + (mPhotosList.size() - position - 1));
         Glide.with(mContext).load("https://image.tmdb.org/t/p/w500" + mPhotosList.get(mPhotosList.size() -  position - 1).getFile_path()).into(holder.videoView);
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -52,11 +52,23 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/imageView_movie_poster"
             android:layout_margin="10dp"
+            android:paddingRight="10dp"
             android:layout_toRightOf="@id/cardView_movie_poster_small"
             android:textColor="#424242"
             android:textSize="22sp"
             android:textStyle="bold"
             tools:text="MovieTitle" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton_movie_favourite"
+            android:layout_width="36dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/imageView_movie_poster"
+            android:layout_height="36dp"
+            android:layout_marginRight="10dp"
+            android:textOn=""
+            android:textOff=""
+            android:layout_alignParentRight="true"/>
 
         <TextView
             android:id="@+id/textView_movie_rating_title"

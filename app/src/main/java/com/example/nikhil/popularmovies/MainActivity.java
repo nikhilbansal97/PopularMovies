@@ -1,6 +1,5 @@
 package com.example.nikhil.popularmovies;
 
-import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
@@ -33,9 +32,12 @@ import com.example.nikhil.popularmovies.Retrofit.ApiClient;
 import com.example.nikhil.popularmovies.Retrofit.ApiInterface;
 import com.example.nikhil.popularmovies.database.DatabaseProvider;
 import com.example.nikhil.popularmovies.database.MovieTable;
+import com.example.nikhil.popularmovies.database.TvTable;
 import com.example.nikhil.popularmovies.pojos.movie.Response;
 import com.example.nikhil.popularmovies.pojos.movie.Results;
+import com.example.nikhil.popularmovies.pojos.movie_details.MovieDetail;
 import com.example.nikhil.popularmovies.pojos.tv.PopularTv;
+import com.example.nikhil.popularmovies.pojos.tv.TvDetails;
 import com.example.nikhil.popularmovies.pojos.tv.TvResults;
 import com.facebook.stetho.Stetho;
 
@@ -78,10 +80,13 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
         if(savedInstanceState != null)
         {
             data_type = savedInstanceState.getString("data_type");
-            if(data_type.equals("movies"))
+            if(data_type.equals("movies")) {
                 movies = savedInstanceState.getParcelableArrayList("movies_list");
-            else
+            }
+            else {
                 tvShows = savedInstanceState.getParcelableArrayList("tv_list");
+            }
+            setTitle(savedInstanceState.getString("title"));
             visibleItemIndex = savedInstanceState.getLong("index");
             progressBar.setVisibility(View.GONE);
         }
@@ -164,37 +169,60 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
                         return true;
                     case R.id.menu_top_rated :
                         drawer.closeDrawers();
-                        setTitle("Top Rated");
+                        setTitle("Top Rated Movies");
                         getMovies(SORT_RATING);
                         return true;
                     case R.id.menu_popular_shows :
                         drawer.closeDrawers();
+                        setTitle("Popular Tv Shows");
                         getTv(SORT_POPULARITY);
                         return true;
                     case R.id.menu_top_rated_shows :
+                        setTitle("Top Rated Tv Shows");
                         drawer.closeDrawers();
                         getTv(SORT_RATING);
                         return true;
                     case R.id.menu_favourite_movie :
-                        Toast.makeText(MainActivity.this, "Favourite Movie", Toast.LENGTH_SHORT).show();
+                        setTitle("Favourite Movies");
                         String[] projection = new String[]{
                                 MovieTable.COLUMN_ID,
                                 MovieTable.COLUMN_MOVIE_ID
                         };
-                        ContentValues values = new ContentValues();
-                        values.put(MovieTable.COLUMN_MOVIE_ID , "12345");
-                        getContentResolver().insert(DatabaseProvider.MovieTableClass.CONTENT_URI, values);
                         Cursor cursor = getContentResolver().query(DatabaseProvider.MovieTableClass.CONTENT_URI,projection,null,null,null);
                         cursor.moveToFirst();
                         ArrayList<String> movie_ids = new ArrayList<String>();
                         for(int i=0;i< cursor.getCount();i++){
                             String id = cursor.getString(cursor.getColumnIndex(MovieTable.COLUMN_MOVIE_ID));
                             Log.d(TAG, "onNavigationItemSelected: " + id);
+                            cursor.moveToNext();
                             movie_ids.add(id);
                         }
+                        drawer.closeDrawers();
+                        getFavouriteMoviesList(movie_ids);
+                        Log.d(TAG, "onNavigationItemSelected: favourite");
+                        recyclerView.setAdapter(adapter);
+                        adapter.notifyDataSetChanged();
                         return true;
                     case R.id.menu_favourite_tv :
-                        Toast.makeText(MainActivity.this, "Favourite Tv", Toast.LENGTH_SHORT).show();
+                        setTitle("Favourite Tv Shows");
+                        String[] projection_tv = new String[]{
+                                TvTable.COLUMN_ID,
+                                TvTable.COLUMN_TEXT
+                        };
+                        Cursor cursor_tv = getContentResolver().query(DatabaseProvider.TvTableClass.CONTENT_URI,projection_tv,null,null,null);
+                        cursor_tv.moveToFirst();
+                        ArrayList<String> tv_ids = new ArrayList<String>();
+                        for(int i=0;i< cursor_tv.getCount();i++){
+                            String id = cursor_tv.getString(cursor_tv.getColumnIndex(TvTable.COLUMN_TEXT));
+                            Log.d(TAG, "onNavigationItemSelected: " + id);
+                            cursor_tv.moveToNext();
+                            tv_ids.add(id);
+                        }
+                        drawer.closeDrawers();
+                        getFavouriteTvList(tv_ids);
+                        Log.d(TAG, "onNavigationItemSelected: favourite");
+                        recyclerView.setAdapter(tvAdapter);
+                        tvAdapter.notifyDataSetChanged();
                         return true;
                     default:
                         Toast.makeText(MainActivity.this, "Something Wrong", Toast.LENGTH_SHORT).show();
@@ -203,6 +231,88 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
             }
         });
     }
+
+    private void getFavouriteTvList(ArrayList<String> tv_ids) {
+        ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
+        Call<TvDetails> callTvDetail;
+        tvShows.clear();
+        Log.d(TAG, "getFavouriteMoviesList: " + tvShows.size());
+        for(int i=0; i< tv_ids.size(); i++){
+            callTvDetail = apiInterface.getTvDetails(tv_ids.get(i),API_KEY,"images");
+            callTvDetail.enqueue(new Callback<TvDetails>() {
+                @Override
+                public void onResponse(Call<TvDetails> call, retrofit2.Response<TvDetails> response) {
+                    if(response != null && response.body() != null){
+                        TvDetails detail = response.body();
+                        String id = detail.getId();
+                        String image_short = detail.getPoster_path();
+                        String title = detail.getName();
+                        TvResults result = new TvResults(id,image_short,title);
+                        Log.d(TAG, "onResponse: " + tvShows.size());
+                        tvShows.add(result);
+                        tvAdapter.notifyDataSetChanged();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<TvDetails> call, Throwable t) {
+
+                }
+            });
+
+            if(i == tv_ids.size() - 1) {
+                adapter.notifyDataSetChanged();
+                Log.d(TAG, "getFavouriteMoviesList: adapter updated");
+            }
+        }
+
+        if(tvShows.size() > 0) {
+            Log.d(TAG, "getFavouriteMoviesList: size : " + tvShows.size());
+            recyclerView.setAdapter(tvAdapter);
+            tvAdapter.notifyDataSetChanged();
+        }
+    }
+
+
+    private void getFavouriteMoviesList(final ArrayList<String> movie_ids) {
+        ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
+        Call<MovieDetail> callMovieDetail;
+        movies.clear();
+        Log.d(TAG, "getFavouriteMoviesList: " + movies.size());
+        for(int i=0; i< movie_ids.size(); i++){
+            callMovieDetail = apiInterface.getMovieDetails(movie_ids.get(i),API_KEY,"images");
+            callMovieDetail.enqueue(new Callback<MovieDetail>() {
+                @Override
+                public void onResponse(Call<MovieDetail> call, retrofit2.Response<MovieDetail> response) {
+                    if(response != null && response.body() != null){
+                        MovieDetail detail = response.body();
+                        String id = detail.getId();
+                        String image_short = detail.getPoster_path();
+                        String title = detail.getTitle();
+                        Results result = new Results(id,image_short,title);
+                        Log.d(TAG, "onResponse: " + movies.size());
+                        movies.add(result);
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+                @Override
+                public void onFailure(Call<MovieDetail> call, Throwable t) {
+                    Log.d(TAG, "onFailure: Failed to get movies from favourites");
+                }
+            });
+            if(i == movie_ids.size() - 1) {
+                adapter.notifyDataSetChanged();
+                Log.d(TAG, "getFavouriteMoviesList: adapter updated");
+            }
+        }
+
+        if(movies.size() > 0) {
+            Log.d(TAG, "getFavouriteMoviesList: size : " + movies.size());
+            recyclerView.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
+        }
+    }
+
 
     /**
      * Get list of tv shows.
@@ -297,6 +407,7 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
         }
         long index = layoutManager.findFirstCompletelyVisibleItemPosition();
         outState.putLong("index",index);
+        outState.putString("title", (String) getTitle());
     }
 
     /**

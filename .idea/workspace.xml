@@ -10,85 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7449b8e5-aef2-417a-b750-d760c0c723e9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/ReviewsAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/VideosAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Listeners/OnVideoClickInterface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/DatabaseClass.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/DatabaseProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/MovieTable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/TvTable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/movie_details/ReviewResults.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/movie_details/Reviews.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_favourite_menu.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/review_list_item.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/video_list_item.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/OnClickInterface.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Listeners/OnClickInterface.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/OnTvClickInterface.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Listeners/OnTvClickInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_26_0_0_beta2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_26_0_0_beta2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/annotations_4_0_0_RC1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/annotations_4_0_0_RC1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_26_0_0_beta2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_26_0_0_beta2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/butterknife_8_7_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/butterknife_8_7_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/butterknife_annotations_8_7_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/butterknife_annotations_8_7_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/cardview_v7_26_0_0_beta2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/cardview_v7_26_0_0_beta2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/circleimageview_2_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/circleimageview_2_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/commons_cli_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/commons_cli_1_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/constraint_layout_1_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/constraint_layout_1_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/constraint_layout_solver_1_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/constraint_layout_solver_1_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/converter_gson_2_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/converter_gson_2_3_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/design_26_0_0_beta2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/design_26_0_0_beta2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/disklrucache_4_0_0_RC1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/disklrucache_4_0_0_RC1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/gifdecoder_4_0_0_RC1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/gifdecoder_4_0_0_RC1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/glide_4_0_0_RC1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/glide_4_0_0_RC1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_7.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_core_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/hamcrest_core_1_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_integration_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/hamcrest_integration_1_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_library_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/hamcrest_library_1_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/javawriter_2_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/javawriter_2_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/javax_annotation_api_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/javax_annotation_api_1_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/javax_inject_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/javax_inject_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jsr305_2_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jsr305_2_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/okhttp_3_8_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/okhttp_3_8_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/okio_1_13_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/okio_1_13_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/parallaxscroll_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/parallaxscroll_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/picasso_2_5_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/picasso_2_5_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_26_0_0_beta2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_26_0_0_beta2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/retrofit_2_3_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/retrofit_2_3_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/schematic_0_6_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/schematic_0_6_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/schematic_annotations_0_6_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/schematic_annotations_0_6_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/stetho_1_5_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/stetho_1_5_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_26_0_0_beta2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_26_0_0_beta2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_compat_26_0_0_beta2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_compat_26_0_0_beta2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_ui_26_0_0_beta2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_core_ui_26_0_0_beta2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_core_utils_26_0_0_beta2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_core_utils_26_0_0_beta2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_fragment_26_0_0_beta2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_fragment_26_0_0_beta2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_media_compat_26_0_0_beta2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_media_compat_26_0_0_beta2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_26_0_0_beta2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_26_0_0_beta2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_26_0_0_beta2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_26_0_0_beta2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/transition_26_0_0_beta2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/transition_26_0_0_beta2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/MovieAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/MovieAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/TvAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/TvAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/VideosAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/VideosAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiInterface.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/DatabaseProvider.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/DatabaseProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/movie/Results.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/movie/Results.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/tv/TvResults.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/tv/TvResults.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_view.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/loading_view.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/loading_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/navigation_menu.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/navigation_menu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <ignored path="PopularMovies.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -125,24 +55,104 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <file leaf-file-name="DetailActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="46" column="72" selection-start-line="46" selection-start-column="72" selection-end-line="46" selection-end-column="72" />
+            <state relative-caret-position="2252">
+              <caret line="294" column="73" selection-start-line="294" selection-start-column="73" selection-end-line="294" selection-end-column="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#11879#13566#0" expanded="true" />
+                <element signature="e#13565#13566#0" expanded="true" />
+                <element signature="e#22426#24141#0" expanded="true" />
+                <element signature="e#24140#24141#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TvTable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/TvTable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
+      <file leaf-file-name="MovieTable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/MovieTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+            <state relative-caret-position="378">
+              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseProvider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/com/example/nikhil/popularmovies/database/generated/DatabaseProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="39">
+              <caret line="291" column="0" selection-start-line="291" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseProvider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/DatabaseProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="54" column="69" selection-start-line="54" selection-start-column="69" selection-end-line="54" selection-end-column="69" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="275" column="0" selection-start-line="275" selection-start-column="0" selection-end-line="275" selection-end-column="0" />
+              <folding>
+                <element signature="e#8470#8478#0" expanded="true" />
+                <element signature="e#9738#9746#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TvAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/TvAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TvResults.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/tv/TvResults.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="49" column="11" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApiInterface.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -154,68 +164,9 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="459">
+              <caret line="64" column="41" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReviewsAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/ReviewsAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="review_list_item.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/review_list_item.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseClass.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/DatabaseClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MovieTable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/MovieTable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseProvider.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/DatabaseProvider.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-286">
-              <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -2155,8 +2106,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/movie/Results.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/movie_details/MovieDetail.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/movie_details/Genres.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/movie_details/Production_countries.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/movie_details/MovieCredits.java" />
@@ -2174,7 +2123,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/movie_details/Crew.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/movie_videos/Videos.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/movie_details/Credits.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/tv/TvResults.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/OnClickInterface.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/OnTvClickInterface.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiClient.java" />
@@ -2184,28 +2132,31 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/loading_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/MovieAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/TvAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Listeners/OnClickInterface.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Listeners/OnVideoClickInterface.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/video_list_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/VideosAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/movie_details/ReviewResults.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiInterface.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/movie_details/Reviews.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/ReviewsAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/review_list_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_detail.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/navigation_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/MovieTable.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/TvTable.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/DatabaseClass.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/DatabaseProvider.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/movie/Results.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_star_border_grey_700_24dp.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/VideosAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_detail.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/TvTable.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/DatabaseProvider.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/tv/TvResults.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/TvAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -2506,6 +2457,28 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PopularMovies" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2537,6 +2510,54 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="popularmovies" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PopularMovies" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popularmovies" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pojos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PopularMovies" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popularmovies" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pojos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2588,7 +2609,7 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../SchematicLibrary" />
     <property name="device.picker.selection" value="b15c9076" />
-    <property name="SearchEverywhereHistoryKey" value="android&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AND/AND PROJECTS/PopularMovies/app/src/main/AndroidManifest.xml&#10;api&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AND/AND PROJECTS/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiInterface.java&#10;build&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AND/AND PROJECTS/PopularMovies/app/build.gradle&#10;deta&#9;FILE&#9;file:///home/nikhil/Desktop/AND/AND PROJECTS/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java&#10;main&#9;FILE&#9;file:///home/nikhil/Desktop/AND/AND PROJECTS/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java&#10;enable adb&#9;ACTION&#9;Android.EnableDdms&#10;run&#9;ACTION&#9;ActivateRunToolWindow&#10;enable&#9;ACTION&#9;Android.EnableDdms&#10;enable adb in&#9;ACTION&#9;Android.EnableDdms&#10;buil&#9;FILE&#9;file:///home/nikhil/Desktop/AND/AND PROJECTS/PopularMovies/app/build.gradle&#10;detail&#9;FILE&#9;file:///home/nikhil/Desktop/AND/AND PROJECTS/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java&#10;android mon&#9;ACTION&#9;ActivateAndroidMonitorToolWindow&#10;manife&#9;FILE&#9;file:///home/nikhil/Desktop/AND/AND PROJECTS/PopularMovies/app/src/main/AndroidManifest.xml&#10;debug&#9;ACTION&#9;ActivateDebugToolWindow&#10;sv&#9;FILE&#9;file:///home/nikhil/Desktop/AND/AND PROJECTS/PopularMovies/app/src/main/res/layout/list_item.xml&#10;activity_deta&#9;FILE&#9;file:///home/nikhil/Desktop/AND/AND PROJECTS/PopularMovies/app/src/main/res/layout/activity_detail_view.xml&#10;android monitor&#9;ACTION&#9;ActivateAndroidMonitorToolWindow&#10;android mo&#9;ACTION&#9;ActivateAndroidMonitorToolWindow&#10;Main&#9;PSI&#9;JAVA://com.example.nikhil.popularmovies.MainActivity&#10;Movie&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Adapters/MovieAdapter.java&#10;TvAdap&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Adapters/TvAdapter.java&#10;activi&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java&#10;inspect&#9;ACTION&#9;InspectCode&#10;settin&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/settings.gradle&#10;inter&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiInterface.java&#10;Tv&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/pojos/tv/TvResults.java&#10;MOvieDeta&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/pojos/MovieDetail.java&#10;Detail&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java&#10;cast&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Adapters/CastAdapter.java&#10;Deta&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java&#10;ap&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiInterface.java" />
+    <property name="SearchEverywhereHistoryKey" value="main&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AND/AND PROJECTS/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java&#10;api&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AND/AND PROJECTS/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiInterface.java&#10;enable adb&#9;ACTION&#9;Android.EnableDdms&#10;enable ad&#9;ACTION&#9;Android.EnableDdms&#10;enabl&#9;ACTION&#9;Android.EnableDdms&#10;android&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AND/AND PROJECTS/PopularMovies/app/src/main/AndroidManifest.xml&#10;build&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AND/AND PROJECTS/PopularMovies/app/build.gradle&#10;deta&#9;FILE&#9;file:///home/nikhil/Desktop/AND/AND PROJECTS/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java&#10;run&#9;ACTION&#9;ActivateRunToolWindow&#10;enable&#9;ACTION&#9;Android.EnableDdms&#10;enable adb in&#9;ACTION&#9;Android.EnableDdms&#10;buil&#9;FILE&#9;file:///home/nikhil/Desktop/AND/AND PROJECTS/PopularMovies/app/build.gradle&#10;detail&#9;FILE&#9;file:///home/nikhil/Desktop/AND/AND PROJECTS/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java&#10;android mon&#9;ACTION&#9;ActivateAndroidMonitorToolWindow&#10;manife&#9;FILE&#9;file:///home/nikhil/Desktop/AND/AND PROJECTS/PopularMovies/app/src/main/AndroidManifest.xml&#10;debug&#9;ACTION&#9;ActivateDebugToolWindow&#10;sv&#9;FILE&#9;file:///home/nikhil/Desktop/AND/AND PROJECTS/PopularMovies/app/src/main/res/layout/list_item.xml&#10;activity_deta&#9;FILE&#9;file:///home/nikhil/Desktop/AND/AND PROJECTS/PopularMovies/app/src/main/res/layout/activity_detail_view.xml&#10;android monitor&#9;ACTION&#9;ActivateAndroidMonitorToolWindow&#10;android mo&#9;ACTION&#9;ActivateAndroidMonitorToolWindow&#10;Main&#9;PSI&#9;JAVA://com.example.nikhil.popularmovies.MainActivity&#10;Movie&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Adapters/MovieAdapter.java&#10;TvAdap&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Adapters/TvAdapter.java&#10;activi&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java&#10;inspect&#9;ACTION&#9;InspectCode&#10;settin&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/settings.gradle&#10;inter&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiInterface.java&#10;Tv&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/pojos/tv/TvResults.java&#10;MOvieDeta&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/pojos/MovieDetail.java&#10;Detail&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java&#10;cast&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Adapters/CastAdapter.java&#10;Deta&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java&#10;ap&#9;FILE&#9;file:///media/nikhil/SOFTWARES/AndroidProjects/PopularMovies/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiInterface.java" />
     <property name="VectorAssetImportPath" value="$USER_HOME$/Desktop" />
   </component>
   <component name="RecentsManager">
@@ -3011,14 +3032,15 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.67171717" sideWeight="0.5121029" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66835016" sideWeight="0.48789713" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27543035" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30484116" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32828283" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17776097" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16944024" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15885022" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32828283" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21406959" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -3032,7 +3054,6 @@
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -3053,27 +3074,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/tv/Seasons.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/movie_videos/VideoResults.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/tv/TvResults.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/CastAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -3132,23 +3132,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/MovieAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="67" column="36" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -3234,13 +3217,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/VideosAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/PhotosAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -3273,13 +3249,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/movie/Results.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -3327,21 +3296,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/TvAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="57" column="55" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/navigation_menu.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3359,33 +3313,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/TvTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_detail.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -3409,33 +3336,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/MovieTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/DatabaseClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3240">
-          <caret line="191" column="74" selection-start-line="191" selection-start-column="74" selection-end-line="191" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8407#8415#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3459,12 +3365,141 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/movie/Results.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="58" column="27" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_star_border.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/MovieAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="40" column="84" selection-start-line="40" selection-start-column="84" selection-end-line="40" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/VideosAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="47" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_detail.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="64" column="41" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/TvTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/DatabaseProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-286">
-          <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
+        <state relative-caret-position="378">
+          <caret line="54" column="69" selection-start-line="54" selection-start-column="69" selection-end-line="54" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/com/example/nikhil/popularmovies/database/generated/DatabaseProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="291" column="0" selection-start-line="291" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/DetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2252">
+          <caret line="294" column="73" selection-start-line="294" selection-start-column="73" selection-end-line="294" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#11879#13566#0" expanded="true" />
+            <element signature="e#13565#13566#0" expanded="true" />
+            <element signature="e#22426#24141#0" expanded="true" />
+            <element signature="e#24140#24141#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/database/MovieTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Retrofit/ApiInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/pojos/tv/TvResults.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="49" column="11" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/Adapters/TvAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nikhil/popularmovies/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="275" column="0" selection-start-line="275" selection-start-column="0" selection-end-line="275" selection-end-column="0" />
+          <folding>
+            <element signature="e#8470#8478#0" expanded="true" />
+            <element signature="e#9738#9746#0" expanded="true" />
           </folding>
         </state>
       </provider>

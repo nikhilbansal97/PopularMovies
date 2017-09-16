@@ -1,12 +1,15 @@
 package com.example.nikhil.popularmovies;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -18,9 +21,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.example.nikhil.popularmovies.Adapters.CastAdapter;
 import com.example.nikhil.popularmovies.Adapters.GenreAdapter;
@@ -30,6 +35,9 @@ import com.example.nikhil.popularmovies.Adapters.VideosAdapter;
 import com.example.nikhil.popularmovies.Listeners.OnVideoClickInterface;
 import com.example.nikhil.popularmovies.Retrofit.ApiClient;
 import com.example.nikhil.popularmovies.Retrofit.ApiInterface;
+import com.example.nikhil.popularmovies.database.DatabaseProvider;
+import com.example.nikhil.popularmovies.database.MovieTable;
+import com.example.nikhil.popularmovies.database.TvTable;
 import com.example.nikhil.popularmovies.pojos.movie_details.Cast;
 import com.example.nikhil.popularmovies.pojos.movie_details.Credits;
 import com.example.nikhil.popularmovies.pojos.movie_details.Genres;
@@ -104,6 +112,8 @@ public class DetailActivity extends AppCompatActivity implements OnVideoClickInt
     ListView listView_reviews;
     @BindView(R.id.textView_movie_reviews_title)
     TextView textViewMovieReviewsTitle;
+    @BindView(R.id.toggleButton_movie_favourite)
+    ToggleButton toggleButtonFavourite;
     private PhotosAdapter mAdapter;
     private List<Backdrops> mPhotosList;
     private List<Genres> mGenresList;
@@ -189,10 +199,11 @@ public class DetailActivity extends AppCompatActivity implements OnVideoClickInt
      *
      * @param detail : TvDetails object which contains the details of the tv show.
      */
-    private void updateTvUi(TvDetails detail) {
+    private void updateTvUi(final TvDetails detail) {
         parentView.removeAllViews();
         inflator.inflate(R.layout.activity_detail, parentView, true);
         ButterKnife.bind(this);
+
         imageViewMoviePoster.setImageAlpha(150);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
@@ -240,6 +251,62 @@ public class DetailActivity extends AppCompatActivity implements OnVideoClickInt
             textViewDivisionView.setVisibility(View.GONE);
             textViewMovieRuntimeValue.setText("");
         }
+
+
+        String[] projetions = new String[]{
+                TvTable.COLUMN_ID,
+                TvTable.COLUMN_TEXT
+        };
+        final Cursor cursor = getContentResolver().query(DatabaseProvider.TvTableClass.CONTENT_URI, projetions, null, null, null);
+        cursor.moveToFirst();
+        boolean isFav = false;
+        for (int i = 0; i < cursor.getCount(); i++) {
+            String tv_id = cursor.getString(cursor.getColumnIndex(TvTable.COLUMN_TEXT));
+            Log.d(TAG, "updateUi: " + tv_id + " " + detail.getId());
+            if ((detail.getId()).equals(tv_id)) {
+                isFav = true;
+            }
+            cursor.moveToNext();
+        }
+        if (isFav) {
+            Log.d(TAG, "updateUi: is in database");
+            toggleButtonFavourite.setChecked(true);
+            toggleButtonFavourite.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_star_yellow));
+        } else {
+            Log.d(TAG, "updateUi: not in database");
+            toggleButtonFavourite.setChecked(false);
+            toggleButtonFavourite.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_star_grey));
+        }
+        toggleButtonFavourite.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    Log.d(TAG, "onCheckedChanged: true");
+                    toggleButtonFavourite.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_star_yellow));
+                    cursor.moveToFirst();
+                    boolean fav = false;
+                    for(int i=0; i < cursor.getCount();i++){
+                        String id = cursor.getString(cursor.getColumnIndex(TvTable.COLUMN_TEXT));
+                        if(detail.getId() == id) {
+                            fav = true;
+                        }
+                    }
+                    if (!fav) {
+                        Log.d(TAG, "onCheckedChanged: adding to database");
+                        ContentValues values = new ContentValues();
+                        values.put(TvTable.COLUMN_TEXT, detail.getId());
+                        getContentResolver().insert(DatabaseProvider.TvTableClass.CONTENT_URI, values);
+                    }
+                } else {
+                    Log.d(TAG, "onCheckedChanged: false, deleting item");
+                    toggleButtonFavourite.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_star_grey));
+                    String where = TvTable.COLUMN_TEXT+ "=?";
+                    String[] selection = new String[]{detail.getId()};
+                    getContentResolver().delete(DatabaseProvider.TvTableClass.withId(detail.getId()),where,selection);
+                }
+            }
+        });
+
     }
 
     /**
@@ -288,9 +355,9 @@ public class DetailActivity extends AppCompatActivity implements OnVideoClickInt
     private void getReviews(String id) {
         Call<Reviews> call;
         if (data_type.equals("movie"))
-            call = apiInterface.getReviews("movie",id, API_KEY);
+            call = apiInterface.getReviews("movie", id, API_KEY);
         else
-            call = apiInterface.getReviews("tv",id, API_KEY);
+            call = apiInterface.getReviews("tv", id, API_KEY);
         call.enqueue(new Callback<Reviews>() {
             @Override
             public void onResponse(Call<Reviews> call, Response<Reviews> response) {
@@ -303,10 +370,10 @@ public class DetailActivity extends AppCompatActivity implements OnVideoClickInt
                         listView_reviews.setVisibility(View.VISIBLE);
                         mReviewsList.clear();
                         Log.d(TAG, "onResponse: " + results.length);
-                        for (int i=0;i< results.length;i++){
+                        for (int i = 0; i < results.length; i++) {
                             ReviewResults result = results[i];
                             Log.d(TAG, "onResponse: " + result.getContent());
-                            mReviewsList.add(i,result);
+                            mReviewsList.add(i, result);
                             mReviewsAdapter.notifyDataSetChanged();
                         }
 
@@ -400,8 +467,8 @@ public class DetailActivity extends AppCompatActivity implements OnVideoClickInt
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case android.R.id.home :
+        switch (item.getItemId()) {
+            case android.R.id.home:
                 onBackPressed();
                 break;
         }
@@ -440,11 +507,65 @@ public class DetailActivity extends AppCompatActivity implements OnVideoClickInt
      *
      * @param detail : MovieDetail object which contains the movie details.
      */
-    private void updateUi(MovieDetail detail) {
+    private void updateUi(final MovieDetail detail) {
         parentView.removeAllViews();
         inflator.inflate(R.layout.activity_detail, parentView, true);
         ButterKnife.bind(this);
         imageViewMoviePoster.setImageAlpha(150);
+
+        String[] projetions = new String[]{
+                MovieTable.COLUMN_ID,
+                MovieTable.COLUMN_MOVIE_ID
+        };
+        final Cursor cursor = getContentResolver().query(DatabaseProvider.MovieTableClass.CONTENT_URI, projetions, null, null, null);
+        cursor.moveToFirst();
+        boolean isFav = false;
+        for (int i = 0; i < cursor.getCount(); i++) {
+            String movie_id = cursor.getString(cursor.getColumnIndex(MovieTable.COLUMN_MOVIE_ID));
+            Log.d(TAG, "updateUi: " + movie_id + " " + detail.getId());
+            if ((detail.getId()).equals(movie_id)) {
+                isFav = true;
+            }
+            cursor.moveToNext();
+        }
+        if (isFav) {
+            Log.d(TAG, "updateUi: is in database");
+            toggleButtonFavourite.setChecked(true);
+            toggleButtonFavourite.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_star_yellow));
+        } else {
+            Log.d(TAG, "updateUi: not in database");
+            toggleButtonFavourite.setChecked(false);
+            toggleButtonFavourite.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_star_grey));
+        }
+        toggleButtonFavourite.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    Log.d(TAG, "onCheckedChanged: true");
+                    toggleButtonFavourite.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_star_yellow));
+                    cursor.moveToFirst();
+                    boolean fav = false;
+                    for(int i=0; i < cursor.getCount();i++){
+                        String id = cursor.getString(cursor.getColumnIndex(MovieTable.COLUMN_MOVIE_ID));
+                        if(detail.getId() == id) {
+                            fav = true;
+                        }
+                    }
+                    if (!fav) {
+                        Log.d(TAG, "onCheckedChanged: adding to database");
+                        ContentValues values = new ContentValues();
+                        values.put(MovieTable.COLUMN_MOVIE_ID, detail.getId());
+                        getContentResolver().insert(DatabaseProvider.MovieTableClass.CONTENT_URI, values);
+                    }
+                } else {
+                    Log.d(TAG, "onCheckedChanged: false, deleting item");
+                    toggleButtonFavourite.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_star_grey));
+                    String where = MovieTable.COLUMN_MOVIE_ID + "=?";
+                    String[] selection = new String[]{detail.getId()};
+                    getContentResolver().delete(DatabaseProvider.MovieTableClass.withId(detail.getId()),where,selection);
+                }
+            }
+        });
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerView.setItemAnimator(new DefaultItemAnimator());

@@ -47,6 +47,12 @@ public class TvResults implements Parcelable {
     @SerializedName("first_air_date")
     private String first_air_date;
 
+    public TvResults(String id, String image, String title){
+        this.id = id;
+        poster_path = image;
+        name = title;
+    }
+
     protected TvResults(Parcel in) {
         id = in.readString();
         origin_country = in.createStringArray();
