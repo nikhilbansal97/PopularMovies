@@ -3,6 +3,7 @@ package com.example.nikhil.popularmovies.Retrofit;
 import com.example.nikhil.popularmovies.pojos.movie.Response;
 import com.example.nikhil.popularmovies.pojos.movie_details.Credits;
 import com.example.nikhil.popularmovies.pojos.movie_details.MovieDetail;
+import com.example.nikhil.popularmovies.pojos.movie_details.Reviews;
 import com.example.nikhil.popularmovies.pojos.movie_videos.Videos;
 import com.example.nikhil.popularmovies.pojos.tv.PopularTv;
 import com.example.nikhil.popularmovies.pojos.tv.TvDetails;
@@ -110,5 +111,17 @@ public interface ApiInterface {
     Call<Credits> getTvCredits(@Path("tv_id") String id,
                                @Query("api_key") String key);
 
+
+    /**
+     * Get user reviews for a particular tv show / movie.
+     * @param type : tv / movie
+     * @param id : id of tv / movie
+     * @param key : Your api-key
+     * @return
+     */
+    @GET("3/{type}/{id}/reviews")
+    Call<Reviews> getReviews(@Path("type") String type,
+                             @Path("id") String id,
+                             @Query("api_key") String key);
 
 }

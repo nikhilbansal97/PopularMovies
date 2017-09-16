@@ -88,7 +88,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/textView_movie_rating_value"
             android:layout_toRightOf="@id/cardView_movie_poster_small"
-            android:layout_marginLeft="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -114,6 +113,7 @@
                 android:layout_marginLeft="8dp"/>
 
             <TextView
+                android:id="@+id/textView_division_view"
                 android:layout_width="2dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -172,7 +172,7 @@
             android:layout_below="@id/textView_movie_overview_value"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:text="Photos"
+            android:text="@string/photos"
             android:textColor="#212121"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -191,7 +191,7 @@
             android:layout_below="@id/recyclerView"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:text="Cast"
+            android:text="@string/cast"
             android:textColor="#212121"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -201,6 +201,44 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/textView_movie_cast_title"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/textView_movie_videos_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recyclerView_crew"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/videos"
+            android:textColor="#212121"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView_videos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_movie_videos_title"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/textView_movie_reviews_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recyclerView_videos"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/user_reviews"
+            android:textColor="#212121"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <ListView
+            android:id="@+id/listView_reviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_movie_reviews_title"
             android:layout_marginTop="10dp"/>
 
     </RelativeLayout>

@@ -6,11 +6,15 @@
             <item
                 android:id="@+id/menu_popular_movies"
                 android:icon="@drawable/flame"
-                android:title="Popular Movies" />
+                android:title="@string/movieItem_popular_movies" />
             <item
                 android:id="@+id/menu_top_rated"
                 android:icon="@drawable/favorite"
-                android:title="Top Rated" />
+                android:title="@string/movieItem_top_rated" />
+            <item
+                android:id="@+id/menu_favourite_movie"
+                android:title="@string/menuItem_favourites"
+                android:icon="@drawable/ic_favourite_menu"/>
         </menu>
     </item>
     <item android:title="TV Shows"
@@ -24,6 +28,10 @@
                 android:id="@+id/menu_top_rated_shows"
                 android:icon="@drawable/favorite"
                 android:title="Top Rated TV Shows" />
+            <item
+                android:id="@+id/menu_favourite_tv"
+                android:title="@string/menuItem_favourites"
+                android:icon="@drawable/ic_favourite_menu"/>
         </menu>
     </item>
 </menu>

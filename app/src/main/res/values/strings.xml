@@ -6,4 +6,12 @@
     <string name="close">Close</string>
     <string name="menu_popular_movies">Popular Movies</string>
     <string name="menu_highest_rated">Highest Rated</string>
+    <string name="internet_offline">Internet not connected! Try again later</string>
+    <string name="videos">Videos</string>
+    <string name="cast">Cast</string>
+    <string name="photos">Photos</string>
+    <string name="user_reviews">User Reviews</string>
+    <string name="movieItem_popular_movies">Popular Movies</string>
+    <string name="movieItem_top_rated">Top Rated</string>
+    <string name="menuItem_favourites">Favourites</string>
 </resources>

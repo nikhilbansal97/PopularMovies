@@ -1,6 +1,8 @@
 package com.example.nikhil.popularmovies;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -25,8 +27,12 @@ import android.widget.Toast;
 
 import com.example.nikhil.popularmovies.Adapters.MovieAdapter;
 import com.example.nikhil.popularmovies.Adapters.TvAdapter;
+import com.example.nikhil.popularmovies.Listeners.OnClickInterface;
+import com.example.nikhil.popularmovies.Listeners.OnTvClickInterface;
 import com.example.nikhil.popularmovies.Retrofit.ApiClient;
 import com.example.nikhil.popularmovies.Retrofit.ApiInterface;
+import com.example.nikhil.popularmovies.database.DatabaseProvider;
+import com.example.nikhil.popularmovies.database.MovieTable;
 import com.example.nikhil.popularmovies.pojos.movie.Response;
 import com.example.nikhil.popularmovies.pojos.movie.Results;
 import com.example.nikhil.popularmovies.pojos.tv.PopularTv;
@@ -39,7 +45,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class MainActivity extends AppCompatActivity implements OnClickInterface,OnTvClickInterface{
+public class MainActivity extends AppCompatActivity implements OnClickInterface,OnTvClickInterface {
 
     private static final String TAG = "MainActivity";
     private RecyclerView recyclerView;
@@ -162,14 +168,33 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
                         getMovies(SORT_RATING);
                         return true;
                     case R.id.menu_popular_shows :
-                        Toast.makeText(MainActivity.this, "Popular Shows", Toast.LENGTH_SHORT).show();
                         drawer.closeDrawers();
                         getTv(SORT_POPULARITY);
                         return true;
                     case R.id.menu_top_rated_shows :
-                        Toast.makeText(MainActivity.this, "Top Rated Shows", Toast.LENGTH_SHORT).show();
                         drawer.closeDrawers();
                         getTv(SORT_RATING);
+                        return true;
+                    case R.id.menu_favourite_movie :
+                        Toast.makeText(MainActivity.this, "Favourite Movie", Toast.LENGTH_SHORT).show();
+                        String[] projection = new String[]{
+                                MovieTable.COLUMN_ID,
+                                MovieTable.COLUMN_MOVIE_ID
+                        };
+                        ContentValues values = new ContentValues();
+                        values.put(MovieTable.COLUMN_MOVIE_ID , "12345");
+                        getContentResolver().insert(DatabaseProvider.MovieTableClass.CONTENT_URI, values);
+                        Cursor cursor = getContentResolver().query(DatabaseProvider.MovieTableClass.CONTENT_URI,projection,null,null,null);
+                        cursor.moveToFirst();
+                        ArrayList<String> movie_ids = new ArrayList<String>();
+                        for(int i=0;i< cursor.getCount();i++){
+                            String id = cursor.getString(cursor.getColumnIndex(MovieTable.COLUMN_MOVIE_ID));
+                            Log.d(TAG, "onNavigationItemSelected: " + id);
+                            movie_ids.add(id);
+                        }
+                        return true;
+                    case R.id.menu_favourite_tv :
+                        Toast.makeText(MainActivity.this, "Favourite Tv", Toast.LENGTH_SHORT).show();
                         return true;
                     default:
                         Toast.makeText(MainActivity.this, "Something Wrong", Toast.LENGTH_SHORT).show();

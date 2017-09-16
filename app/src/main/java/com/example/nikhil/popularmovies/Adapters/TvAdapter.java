@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.bumptech.glide.Glide;
-import com.example.nikhil.popularmovies.OnTvClickInterface;
+import com.example.nikhil.popularmovies.Listeners.OnTvClickInterface;
 import com.example.nikhil.popularmovies.R;
 import com.example.nikhil.popularmovies.pojos.tv.TvResults;
 

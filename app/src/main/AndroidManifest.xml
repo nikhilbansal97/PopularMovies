@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".DetailActivity"
             android:parentActivityName=".MainActivity"/>
+        <provider
+            android:authorities="com.example.nikhil.popularmovies.database"
+            android:name=".database.generated.DatabaseProvider"/>
     </application>
-
 </manifest>
