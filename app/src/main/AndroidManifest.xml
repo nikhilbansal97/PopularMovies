@@ -22,6 +22,6 @@
             android:parentActivityName=".MainActivity"/>
         <provider
             android:authorities="com.example.nikhil.popularmovies.database"
-            android:name=".database.generated.DatabaseProvider"/>
+            android:name=".database.DatabaseContentProvider"/>
     </application>
 </manifest>

@@ -1,6 +1,6 @@
 package com.example.nikhil.popularmovies.pojos.movie_details;
 
-import com.example.nikhil.popularmovies.pojos.movie_images.Belongs_To_Collection;
+import com.example.nikhil.popularmovies.pojos.movie_images.BelongsToCollection;
 import com.example.nikhil.popularmovies.pojos.movie_images.Images;
 import com.google.gson.annotations.SerializedName;
 
@@ -13,9 +13,9 @@ public class MovieDetail {
     @SerializedName("budget")
     private String budget;
     @SerializedName("vote_average")
-    private String vote_average;
+    private String voteAverage;
     @SerializedName("backdrop_path")
-    private String backdrop_path;
+    private String backdropPath;
     @SerializedName("genres")
     private List<Genres> genres;
     @SerializedName("status")
@@ -23,7 +23,7 @@ public class MovieDetail {
     @SerializedName("runtime")
     private String runtime;
     @SerializedName("spoken_languages")
-    private List<Spoken_languages> spoken_languages;
+    private List<SpokenLanguages> spokenLanguages;
     @SerializedName("adult")
     private String adult;
     @SerializedName("homepage")
@@ -31,29 +31,29 @@ public class MovieDetail {
     @SerializedName("id")
     private String id;
     @SerializedName("production_countries")
-    private List<Production_countries> production_countries;
+    private List<ProductionCountries> productionCountries;
     @SerializedName("title")
     private String title;
     @SerializedName("original_language")
-    private String original_language;
+    private String originalLanguage;
     @SerializedName("overview")
     private String overview;
     @SerializedName("production_companies")
-    private List<Production_companies> production_companies;
+    private List<ProductionCompanies> productionCompanies;
     @SerializedName("belongs_to_collection")
-    private Belongs_To_Collection belongs_to_collection;
+    private BelongsToCollection belongsToCollection;
     @SerializedName("imdb_id")
-    private String imdb_id;
+    private String imdbId;
     @SerializedName("release_date")
-    private String release_date;
+    private String releaseDate;
     @SerializedName("original_title")
-    private String original_title;
+    private String originalTitle;
     @SerializedName("images")
     private Images images;
     @SerializedName("vote_count")
-    private String vote_count;
+    private String voteCount;
     @SerializedName("poster_path")
-    private String poster_path;
+    private String posterPath;
     @SerializedName("videos")
     private String video;
     @SerializedName("tagline")
@@ -73,24 +73,24 @@ public class MovieDetail {
         this.budget = budget;
     }
 
-    public String getVote_average ()
+    public String getVoteAverage()
     {
-        return vote_average;
+        return voteAverage;
     }
 
-    public void setVote_average (String vote_average)
+    public void setVoteAverage(String voteAverage)
     {
-        this.vote_average = vote_average;
+        this.voteAverage = voteAverage;
     }
 
-    public String getBackdrop_path ()
+    public String getBackdropPath()
     {
-        return backdrop_path;
+        return backdropPath;
     }
 
-    public void setBackdrop_path (String backdrop_path)
+    public void setBackdropPath(String backdropPath)
     {
-        this.backdrop_path = backdrop_path;
+        this.backdropPath = backdropPath;
     }
 
     public List<Genres> getGenres ()
@@ -123,14 +123,14 @@ public class MovieDetail {
         this.runtime = runtime;
     }
 
-    public List<Spoken_languages> getSpoken_languages ()
+    public List<SpokenLanguages> getSpokenLanguages()
     {
-        return spoken_languages;
+        return spokenLanguages;
     }
 
-    public void setSpoken_languages (List<Spoken_languages> spoken_languages)
+    public void setSpokenLanguages(List<SpokenLanguages> spokenLanguages)
     {
-        this.spoken_languages = spoken_languages;
+        this.spokenLanguages = spokenLanguages;
     }
 
     public String getAdult ()
@@ -163,14 +163,14 @@ public class MovieDetail {
         this.id = id;
     }
 
-    public List<Production_countries> getProduction_countries ()
+    public List<ProductionCountries> getProductionCountries()
     {
-        return production_countries;
+        return productionCountries;
     }
 
-    public void setProduction_countries (List<Production_countries> production_countries)
+    public void setProductionCountries(List<ProductionCountries> productionCountries)
     {
-        this.production_countries = production_countries;
+        this.productionCountries = productionCountries;
     }
 
     public String getTitle ()
@@ -183,14 +183,14 @@ public class MovieDetail {
         this.title = title;
     }
 
-    public String getOriginal_language ()
+    public String getOriginalLanguage()
     {
-        return original_language;
+        return originalLanguage;
     }
 
-    public void setOriginal_language (String original_language)
+    public void setOriginalLanguage(String originalLanguage)
     {
-        this.original_language = original_language;
+        this.originalLanguage = originalLanguage;
     }
 
     public String getOverview ()
@@ -203,54 +203,54 @@ public class MovieDetail {
         this.overview = overview;
     }
 
-    public List<Production_companies> getProduction_companies ()
+    public List<ProductionCompanies> getProductionCompanies()
     {
-        return production_companies;
+        return productionCompanies;
     }
 
-    public void setProduction_companies (List   <Production_companies> production_companies)
+    public void setProductionCompanies(List   <ProductionCompanies> productionCompanies)
     {
-        this.production_companies = production_companies;
+        this.productionCompanies = productionCompanies;
     }
 
-    public Belongs_To_Collection getBelongs_to_collection ()
+    public BelongsToCollection getBelongsToCollection()
 {
-    return belongs_to_collection;
+    return belongsToCollection;
 }
 
-    public void setBelongs_to_collection (Belongs_To_Collection belongs_to_collection)
+    public void setBelongsToCollection(BelongsToCollection belongsToCollection)
     {
-        this.belongs_to_collection = belongs_to_collection;
+        this.belongsToCollection = belongsToCollection;
     }
 
-    public String getImdb_id ()
+    public String getImdbId()
     {
-        return imdb_id;
+        return imdbId;
     }
 
-    public void setImdb_id (String imdb_id)
+    public void setImdbId(String imdbId)
     {
-        this.imdb_id = imdb_id;
+        this.imdbId = imdbId;
     }
 
-    public String getRelease_date ()
+    public String getReleaseDate()
     {
-        return release_date;
+        return releaseDate;
     }
 
-    public void setRelease_date (String release_date)
+    public void setReleaseDate(String releaseDate)
     {
-        this.release_date = release_date;
+        this.releaseDate = releaseDate;
     }
 
-    public String getOriginal_title ()
+    public String getOriginalTitle()
     {
-        return original_title;
+        return originalTitle;
     }
 
-    public void setOriginal_title (String original_title)
+    public void setOriginalTitle(String originalTitle)
     {
-        this.original_title = original_title;
+        this.originalTitle = originalTitle;
     }
 
     public Images getImages ()
@@ -263,24 +263,24 @@ public class MovieDetail {
         this.images = images;
     }
 
-    public String getVote_count ()
+    public String getVoteCount()
     {
-        return vote_count;
+        return voteCount;
     }
 
-    public void setVote_count (String vote_count)
+    public void setVoteCount(String voteCount)
     {
-        this.vote_count = vote_count;
+        this.voteCount = voteCount;
     }
 
-    public String getPoster_path ()
+    public String getPosterPath()
     {
-        return poster_path;
+        return posterPath;
     }
 
-    public void setPoster_path (String poster_path)
+    public void setPosterPath(String posterPath)
     {
-        this.poster_path = poster_path;
+        this.posterPath = posterPath;
     }
 
     public String getVideo ()
@@ -326,6 +326,6 @@ public class MovieDetail {
     @Override
     public String toString()
     {
-        return "ClassPojo [budget = "+budget+", vote_average = "+vote_average+", backdrop_path = "+backdrop_path+", genres = "+genres+", status = "+status+", runtime = "+runtime+", spoken_languages = "+spoken_languages+", adult = "+adult+", homepage = "+homepage+", id = "+id+", production_countries = "+production_countries+", title = "+title+", original_language = "+original_language+", overview = "+overview+", production_companies = "+production_companies+", belongs_to_collection = "+belongs_to_collection+", imdb_id = "+imdb_id+", release_date = "+release_date+", original_title = "+original_title+", images = "+images+", vote_count = "+vote_count+", poster_path = "+poster_path+", video = "+video+", tagline = "+tagline+", revenue = "+revenue+", popularity = "+popularity+"]";
+        return "ClassPojo [budget = "+budget+", voteAverage = "+ voteAverage +", backdropPath = "+ backdropPath +", genres = "+genres+", status = "+status+", runtime = "+runtime+", spokenLanguages = "+ spokenLanguages +", adult = "+adult+", homepage = "+homepage+", id = "+id+", productionCountries = "+ productionCountries +", title = "+title+", originalLanguage = "+ originalLanguage +", overview = "+overview+", productionCompanies = "+ productionCompanies +", belongsToCollection = "+ belongsToCollection +", imdbId = "+ imdbId +", releaseDate = "+ releaseDate +", originalTitle = "+ originalTitle +", images = "+images+", voteCount = "+ voteCount +", posterPath = "+ posterPath +", video = "+video+", tagline = "+tagline+", revenue = "+revenue+", popularity = "+popularity+"]";
     }
 }

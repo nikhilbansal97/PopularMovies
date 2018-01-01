@@ -12,61 +12,61 @@ public class TvResults implements Parcelable {
     private String id;
 
     @SerializedName("origin_country")
-    private String[] origin_country;
+    private String[] originCountry;
 
     @SerializedName("overview")
     private String overview;
 
     @SerializedName("backdrop_path")
-    private String backdrop_path;
+    private String backdropPath;
 
     @SerializedName("original_language")
-    private String original_language;
+    private String originalLanguage;
 
     @SerializedName("vote_average")
-    private String vote_average;
+    private String voteAverage;
 
     @SerializedName("genre_ids")
-    private String[] genre_ids;
+    private String[] genreIds;
 
     @SerializedName("name")
     private String name;
 
     @SerializedName("vote_count")
-    private String vote_count;
+    private String voteCount;
 
     @SerializedName("poster_path")
-    private String poster_path;
+    private String posterPath;
 
     @SerializedName("original_name")
-    private String original_name;
+    private String originalName;
 
     @SerializedName("popularity")
     private String popularity;
 
     @SerializedName("first_air_date")
-    private String first_air_date;
+    private String firstAirDate;
 
     public TvResults(String id, String image, String title){
         this.id = id;
-        poster_path = image;
+        posterPath = image;
         name = title;
     }
 
     protected TvResults(Parcel in) {
         id = in.readString();
-        origin_country = in.createStringArray();
+        originCountry = in.createStringArray();
         overview = in.readString();
-        backdrop_path = in.readString();
-        original_language = in.readString();
-        vote_average = in.readString();
-        genre_ids = in.createStringArray();
+        backdropPath = in.readString();
+        originalLanguage = in.readString();
+        voteAverage = in.readString();
+        genreIds = in.createStringArray();
         name = in.readString();
-        vote_count = in.readString();
-        poster_path = in.readString();
-        original_name = in.readString();
+        voteCount = in.readString();
+        posterPath = in.readString();
+        originalName = in.readString();
         popularity = in.readString();
-        first_air_date = in.readString();
+        firstAirDate = in.readString();
     }
 
     public static final Creator<TvResults> CREATOR = new Creator<TvResults>() {
@@ -89,12 +89,12 @@ public class TvResults implements Parcelable {
         this.id = id;
     }
 
-    public String[] getOrigin_country() {
-        return origin_country;
+    public String[] getOriginCountry() {
+        return originCountry;
     }
 
-    public void setOrigin_country(String[] origin_country) {
-        this.origin_country = origin_country;
+    public void setOriginCountry(String[] originCountry) {
+        this.originCountry = originCountry;
     }
 
     public String getOverview() {
@@ -105,36 +105,36 @@ public class TvResults implements Parcelable {
         this.overview = overview;
     }
 
-    public String getBackdrop_path() {
-        return backdrop_path;
+    public String getBackdropPath() {
+        return backdropPath;
     }
 
-    public void setBackdrop_path(String backdrop_path) {
-        this.backdrop_path = backdrop_path;
+    public void setBackdropPath(String backdropPath) {
+        this.backdropPath = backdropPath;
     }
 
-    public String getOriginal_language() {
-        return original_language;
+    public String getOriginalLanguage() {
+        return originalLanguage;
     }
 
-    public void setOriginal_language(String original_language) {
-        this.original_language = original_language;
+    public void setOriginalLanguage(String originalLanguage) {
+        this.originalLanguage = originalLanguage;
     }
 
-    public String getVote_average() {
-        return vote_average;
+    public String getVoteAverage() {
+        return voteAverage;
     }
 
-    public void setVote_average(String vote_average) {
-        this.vote_average = vote_average;
+    public void setVoteAverage(String voteAverage) {
+        this.voteAverage = voteAverage;
     }
 
-    public String[] getGenre_ids() {
-        return genre_ids;
+    public String[] getGenreIds() {
+        return genreIds;
     }
 
-    public void setGenre_ids(String[] genre_ids) {
-        this.genre_ids = genre_ids;
+    public void setGenreIds(String[] genreIds) {
+        this.genreIds = genreIds;
     }
 
     public String getName() {
@@ -145,28 +145,28 @@ public class TvResults implements Parcelable {
         this.name = name;
     }
 
-    public String getVote_count() {
-        return vote_count;
+    public String getVoteCount() {
+        return voteCount;
     }
 
-    public void setVote_count(String vote_count) {
-        this.vote_count = vote_count;
+    public void setVoteCount(String voteCount) {
+        this.voteCount = voteCount;
     }
 
-    public String getPoster_path() {
-        return poster_path;
+    public String getPosterPath() {
+        return posterPath;
     }
 
-    public void setPoster_path(String poster_path) {
-        this.poster_path = poster_path;
+    public void setPosterPath(String posterPath) {
+        this.posterPath = posterPath;
     }
 
-    public String getOriginal_name() {
-        return original_name;
+    public String getOriginalName() {
+        return originalName;
     }
 
-    public void setOriginal_name(String original_name) {
-        this.original_name = original_name;
+    public void setOriginalName(String originalName) {
+        this.originalName = originalName;
     }
 
     public String getPopularity() {
@@ -177,17 +177,17 @@ public class TvResults implements Parcelable {
         this.popularity = popularity;
     }
 
-    public String getFirst_air_date() {
-        return first_air_date;
+    public String getFirstAirDate() {
+        return firstAirDate;
     }
 
-    public void setFirst_air_date(String first_air_date) {
-        this.first_air_date = first_air_date;
+    public void setFirstAirDate(String firstAirDate) {
+        this.firstAirDate = firstAirDate;
     }
 
     @Override
     public String toString() {
-        return "ClassPojo [id = " + id + ", origin_country = " + origin_country + ", overview = " + overview + ", backdrop_path = " + backdrop_path + ", original_language = " + original_language + ", vote_average = " + vote_average + ", genre_ids = " + genre_ids + ", name = " + name + ", vote_count = " + vote_count + ", poster_path = " + poster_path + ", original_name = " + original_name + ", popularity = " + popularity + ", first_air_date = " + first_air_date + "]";
+        return "ClassPojo [id = " + id + ", originCountry = " + originCountry + ", overview = " + overview + ", backdropPath = " + backdropPath + ", originalLanguage = " + originalLanguage + ", voteAverage = " + voteAverage + ", genreIds = " + genreIds + ", name = " + name + ", voteCount = " + voteCount + ", posterPath = " + posterPath + ", originalName = " + originalName + ", popularity = " + popularity + ", firstAirDate = " + firstAirDate + "]";
     }
 
     @Override
@@ -198,17 +198,17 @@ public class TvResults implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(id);
-        parcel.writeStringArray(origin_country);
+        parcel.writeStringArray(originCountry);
         parcel.writeString(overview);
-        parcel.writeString(backdrop_path);
-        parcel.writeString(original_language);
-        parcel.writeString(vote_average);
-        parcel.writeStringArray(genre_ids);
+        parcel.writeString(backdropPath);
+        parcel.writeString(originalLanguage);
+        parcel.writeString(voteAverage);
+        parcel.writeStringArray(genreIds);
         parcel.writeString(name);
-        parcel.writeString(vote_count);
-        parcel.writeString(poster_path);
-        parcel.writeString(original_name);
+        parcel.writeString(voteCount);
+        parcel.writeString(posterPath);
+        parcel.writeString(originalName);
         parcel.writeString(popularity);
-        parcel.writeString(first_air_date);
+        parcel.writeString(firstAirDate);
     }
 }

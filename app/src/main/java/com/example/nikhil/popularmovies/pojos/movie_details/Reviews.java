@@ -15,9 +15,9 @@ public class Reviews {
     @SerializedName("page")
     private String page;
     @SerializedName("total_pages")
-    private String total_pages;
+    private String totalPages;
     @SerializedName("total_Results")
-    private String total_results;
+    private String totalResults;
 
     public String getId ()
     {
@@ -49,29 +49,29 @@ public class Reviews {
         this.page = page;
     }
 
-    public String getTotal_pages ()
+    public String getTotalPages()
     {
-        return total_pages;
+        return totalPages;
     }
 
-    public void setTotal_pages (String total_pages)
+    public void setTotalPages(String totalPages)
     {
-        this.total_pages = total_pages;
+        this.totalPages = totalPages;
     }
 
-    public String getTotal_results ()
+    public String getTotalResults()
     {
-        return total_results;
+        return totalResults;
     }
 
-    public void setTotal_results (String total_results)
+    public void setTotalResults(String totalResults)
     {
-        this.total_results = total_results;
+        this.totalResults = totalResults;
     }
 
     @Override
     public String toString()
     {
-        return "ClassPojo [id = "+id+", results = "+results+", page = "+page+", total_pages = "+total_pages+", total_results = "+total_results+"]";
+        return "ClassPojo [id = "+id+", results = "+results+", page = "+page+", totalPages = "+ totalPages +", totalResults = "+ totalResults +"]";
     }
 }

@@ -1,5 +1,6 @@
 package com.example.nikhil.popularmovies;
 
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -35,9 +36,7 @@ import com.example.nikhil.popularmovies.Adapters.VideosAdapter;
 import com.example.nikhil.popularmovies.Listeners.OnVideoClickInterface;
 import com.example.nikhil.popularmovies.Retrofit.ApiClient;
 import com.example.nikhil.popularmovies.Retrofit.ApiInterface;
-import com.example.nikhil.popularmovies.database.DatabaseProvider;
-import com.example.nikhil.popularmovies.database.MovieTable;
-import com.example.nikhil.popularmovies.database.TvTable;
+import com.example.nikhil.popularmovies.database.ContractClass;
 import com.example.nikhil.popularmovies.pojos.movie_details.Cast;
 import com.example.nikhil.popularmovies.pojos.movie_details.Credits;
 import com.example.nikhil.popularmovies.pojos.movie_details.Genres;
@@ -145,11 +144,18 @@ public class DetailActivity extends AppCompatActivity implements OnVideoClickInt
 
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
         credits = new Credits();
-        Intent intent = getIntent();
-        id = intent.getStringExtra("id");
-        image_url_short = intent.getStringExtra("image_short");
-        title = intent.getStringExtra("title");
-        data_type = intent.getStringExtra("data_type");
+        if (savedInstanceState == null) {
+            Intent intent = getIntent();
+            id = intent.getStringExtra("id");
+            image_url_short = intent.getStringExtra("image_short");
+            title = intent.getStringExtra("title");
+            data_type = intent.getStringExtra("data_type");
+        } else {
+            id = savedInstanceState.getString("id");
+            image_url_short = savedInstanceState.getString("image_short");
+            title = savedInstanceState.getString("title");
+            data_type = savedInstanceState.getString("data_type");
+        }
         setTitle(title);
 
         Log.d(TAG, id + title + data_type);
@@ -171,6 +177,15 @@ public class DetailActivity extends AppCompatActivity implements OnVideoClickInt
         castAdapter = new CastAdapter(this, mCastList);
         videoAdapter = new VideosAdapter(this, this, mVideosList, mPhotosList);
         mReviewsAdapter = new ReviewsAdapter(this, mReviewsList);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("id", id);
+        outState.putString("image_short", image_url_short);
+        outState.putString("title", title);
+        outState.putString("data_type", data_type);
     }
 
     /**
@@ -227,10 +242,10 @@ public class DetailActivity extends AppCompatActivity implements OnVideoClickInt
         getVideos(id);
         getReviews(id);
 
-        Picasso.with(mContext).load("https://image.tmdb.org/t/p/w500" + detail.getBackdrop_path()).into(imageViewMoviePoster);
+        Picasso.with(mContext).load("https://image.tmdb.org/t/p/w500" + detail.getBackdropPath()).into(imageViewMoviePoster);
         Picasso.with(mContext).load("https://image.tmdb.org/t/p/w500" + image_url_short).centerCrop().resize(225, 400).into(imageViewMoviePosterSmall);
-        textViewMovieTitle.setText(detail.getOriginal_name());
-        textViewMovieRatingValue.setText(detail.getVote_average());
+        textViewMovieTitle.setText(detail.getOriginalName());
+        textViewMovieRatingValue.setText(detail.getVoteAverage());
         textViewMovieOverviewValue.setText(detail.getOverview());
         mPhotosList.clear();
         mPhotosList.addAll(detail.getImages().getBackdrops());
@@ -239,7 +254,7 @@ public class DetailActivity extends AppCompatActivity implements OnVideoClickInt
         mGenresList.clear();
         mGenresList.addAll(detail.getGenres());
         mGenreAdapter.notifyDataSetChanged();
-        String[] runtime = detail.getEpisode_run_time();
+        String[] runtime = detail.getEpisodeRunTime();
         if (runtime.length > 0) {
             textViewMovieRuntimeValue.setText(runtime[0]);
             textViewMovieRuntimeValue.setVisibility(View.VISIBLE);
@@ -253,15 +268,16 @@ public class DetailActivity extends AppCompatActivity implements OnVideoClickInt
         }
 
 
-        String[] projetions = new String[]{
-                TvTable.COLUMN_ID,
-                TvTable.COLUMN_TEXT
+        final String[] projetions = new String[]{
+                ContractClass.TvProvider._ID,
+                ContractClass.TvProvider.COLUMN_TV_ID
         };
-        final Cursor cursor = getContentResolver().query(DatabaseProvider.TvTableClass.CONTENT_URI, projetions, null, null, null);
+        final Cursor cursor = getContentResolver().query(Uri.withAppendedPath(ContractClass.BASE_ITEM_URI, ContractClass.TvProvider.PATH_TABLE),
+                projetions, null, null, null);
         cursor.moveToFirst();
         boolean isFav = false;
         for (int i = 0; i < cursor.getCount(); i++) {
-            String tv_id = cursor.getString(cursor.getColumnIndex(TvTable.COLUMN_TEXT));
+            String tv_id = cursor.getString(cursor.getColumnIndex(ContractClass.TvProvider.COLUMN_TV_ID));
             Log.d(TAG, "updateUi: " + tv_id + " " + detail.getId());
             if ((detail.getId()).equals(tv_id)) {
                 isFav = true;
@@ -280,30 +296,48 @@ public class DetailActivity extends AppCompatActivity implements OnVideoClickInt
         toggleButtonFavourite.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                Cursor cursor = getContentResolver().query(Uri.withAppendedPath(ContractClass.BASE_ITEM_URI, ContractClass.TvProvider.PATH_TABLE),
+                        projetions, null, null, null);
                 if (isChecked) {
                     Log.d(TAG, "onCheckedChanged: true");
                     toggleButtonFavourite.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_star_yellow));
                     cursor.moveToFirst();
                     boolean fav = false;
                     for(int i=0; i < cursor.getCount();i++){
-                        String id = cursor.getString(cursor.getColumnIndex(TvTable.COLUMN_TEXT));
+                        String id = cursor.getString(cursor.getColumnIndex(ContractClass.TvProvider.COLUMN_TV_ID));
                         if(detail.getId() == id) {
                             fav = true;
                         }
+                        cursor.moveToNext();
                     }
                     if (!fav) {
                         Log.d(TAG, "onCheckedChanged: adding to database");
                         ContentValues values = new ContentValues();
-                        values.put(TvTable.COLUMN_TEXT, detail.getId());
-                        getContentResolver().insert(DatabaseProvider.TvTableClass.CONTENT_URI, values);
+                        values.put(ContractClass.TvProvider.COLUMN_TV_ID, detail.getId());
+                        getContentResolver().insert(Uri.withAppendedPath(ContractClass.BASE_ITEM_URI, ContractClass.TvProvider.PATH_TABLE),
+                                values);
                     }
                 } else {
                     Log.d(TAG, "onCheckedChanged: false, deleting item");
                     toggleButtonFavourite.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_star_grey));
-                    String where = TvTable.COLUMN_TEXT+ "=?";
-                    String[] selection = new String[]{detail.getId()};
-                    getContentResolver().delete(DatabaseProvider.TvTableClass.withId(detail.getId()),where,selection);
+                    cursor.moveToFirst();
+                    int rowId = 0;
+                    for(int i=0; i < cursor.getCount();i++){
+                        String id = cursor.getString(cursor.getColumnIndex(ContractClass.TvProvider.COLUMN_TV_ID));
+                        Log.d(TAG, "onCheckedChanged: id in table " + id + " id of the movie in detail " + detail.getId());
+                        if(detail.getId().equals(id)) {
+                            rowId = cursor.getInt(cursor.getColumnIndex(ContractClass.TvProvider._ID));
+                            Log.d(TAG, "onCheckedChanged: id to delete" + id);
+                        }
+                        cursor.moveToNext();
+                    }
+                    getContentResolver().delete(ContentUris.withAppendedId(
+                            Uri.withAppendedPath(ContractClass.BASE_ITEM_URI, ContractClass.TvProvider.PATH_TABLE), rowId),
+                            null,null);
+                    Log.d(TAG, "onCheckedChanged: delete tv " + ContentUris.withAppendedId(
+                            Uri.withAppendedPath(ContractClass.BASE_ITEM_URI, ContractClass.TvProvider.PATH_TABLE), rowId));
                 }
+                cursor.close();
             }
         });
 
@@ -513,21 +547,23 @@ public class DetailActivity extends AppCompatActivity implements OnVideoClickInt
         ButterKnife.bind(this);
         imageViewMoviePoster.setImageAlpha(150);
 
-        String[] projetions = new String[]{
-                MovieTable.COLUMN_ID,
-                MovieTable.COLUMN_MOVIE_ID
+        final String[] projetions = new String[]{
+                ContractClass.MovieProvider._ID,
+                ContractClass.MovieProvider.COLUMN_MOVIE_ID
         };
-        final Cursor cursor = getContentResolver().query(DatabaseProvider.MovieTableClass.CONTENT_URI, projetions, null, null, null);
+        final Cursor cursor = getContentResolver().query(Uri.withAppendedPath(ContractClass.BASE_ITEM_URI, ContractClass.MovieProvider.PATH_TABLE),
+                projetions, null, null, null);
         cursor.moveToFirst();
         boolean isFav = false;
         for (int i = 0; i < cursor.getCount(); i++) {
-            String movie_id = cursor.getString(cursor.getColumnIndex(MovieTable.COLUMN_MOVIE_ID));
+            String movie_id = cursor.getString(cursor.getColumnIndex(ContractClass.MovieProvider.COLUMN_MOVIE_ID));
             Log.d(TAG, "updateUi: " + movie_id + " " + detail.getId());
             if ((detail.getId()).equals(movie_id)) {
                 isFav = true;
             }
             cursor.moveToNext();
         }
+        cursor.close();
         if (isFav) {
             Log.d(TAG, "updateUi: is in database");
             toggleButtonFavourite.setChecked(true);
@@ -540,30 +576,45 @@ public class DetailActivity extends AppCompatActivity implements OnVideoClickInt
         toggleButtonFavourite.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                Cursor cursor = getContentResolver().query(Uri.withAppendedPath(ContractClass.BASE_ITEM_URI, ContractClass.MovieProvider.PATH_TABLE),
+                        projetions, null, null, null);
+                cursor.moveToFirst();
                 if (isChecked) {
                     Log.d(TAG, "onCheckedChanged: true");
                     toggleButtonFavourite.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_star_yellow));
                     cursor.moveToFirst();
                     boolean fav = false;
                     for(int i=0; i < cursor.getCount();i++){
-                        String id = cursor.getString(cursor.getColumnIndex(MovieTable.COLUMN_MOVIE_ID));
-                        if(detail.getId() == id) {
+                        String id = cursor.getString(cursor.getColumnIndex(ContractClass.MovieProvider.COLUMN_MOVIE_ID));
+                        if(detail.getId().equals(id)) {
                             fav = true;
                         }
+                        cursor.moveToNext();
                     }
                     if (!fav) {
                         Log.d(TAG, "onCheckedChanged: adding to database");
                         ContentValues values = new ContentValues();
-                        values.put(MovieTable.COLUMN_MOVIE_ID, detail.getId());
-                        getContentResolver().insert(DatabaseProvider.MovieTableClass.CONTENT_URI, values);
+                        values.put(ContractClass.MovieProvider.COLUMN_MOVIE_ID, detail.getId());
+                        getContentResolver().insert(Uri.withAppendedPath(ContractClass.BASE_ITEM_URI, ContractClass.MovieProvider.PATH_TABLE),
+                                values);
                     }
                 } else {
                     Log.d(TAG, "onCheckedChanged: false, deleting item");
                     toggleButtonFavourite.setBackgroundDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_star_grey));
-                    String where = MovieTable.COLUMN_MOVIE_ID + "=?";
-                    String[] selection = new String[]{detail.getId()};
-                    getContentResolver().delete(DatabaseProvider.MovieTableClass.withId(detail.getId()),where,selection);
+                    int rowId = 0;
+                    cursor.moveToFirst();
+                    for(int i=0; i < cursor.getCount();i++){
+                        String id = cursor.getString(cursor.getColumnIndex(ContractClass.MovieProvider.COLUMN_MOVIE_ID));
+                        if(detail.getId().equals(id)) {
+                            rowId = cursor.getInt(cursor.getColumnIndex(ContractClass.MovieProvider._ID));
+                        }
+                        cursor.moveToNext();
+                    }
+                    getContentResolver().delete(ContentUris.withAppendedId(
+                            Uri.withAppendedPath(ContractClass.BASE_ITEM_URI, ContractClass.MovieProvider.PATH_TABLE), rowId),
+                            null,null);
                 }
+                cursor.close();
             }
         });
 
@@ -590,10 +641,10 @@ public class DetailActivity extends AppCompatActivity implements OnVideoClickInt
         Log.d(TAG, "updateUi: " + detail.getId());
 
         textViewMovieRuntimeValue.setVisibility(View.VISIBLE);
-        Picasso.with(mContext).load("https://image.tmdb.org/t/p/w500" + detail.getBackdrop_path()).into(imageViewMoviePoster);
+        Picasso.with(mContext).load("https://image.tmdb.org/t/p/w500" + detail.getBackdropPath()).into(imageViewMoviePoster);
         Picasso.with(mContext).load("https://image.tmdb.org/t/p/w500" + image_url_short).centerCrop().resize(225, 400).into(imageViewMoviePosterSmall);
-        textViewMovieTitle.setText(detail.getOriginal_title());
-        textViewMovieRatingValue.setText(detail.getVote_average());
+        textViewMovieTitle.setText(detail.getOriginalTitle());
+        textViewMovieRatingValue.setText(detail.getVoteAverage());
         textViewMovieOverviewValue.setText(detail.getOverview());
         mPhotosList.clear();
         mPhotosList.addAll(detail.getImages().getBackdrops());
@@ -605,7 +656,7 @@ public class DetailActivity extends AppCompatActivity implements OnVideoClickInt
         textViewMovieRuntimeValue.setText(detail.getRuntime());
         SimpleDateFormat oldDate = new SimpleDateFormat("yyyy-dd-mm");
         SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy ");
-        String date = detail.getRelease_date();
+        String date = detail.getReleaseDate();
         try {
             date = dateFormat.format(oldDate.parse(date));
         } catch (ParseException e) {

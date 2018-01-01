@@ -1,11 +1,15 @@
 package com.example.nikhil.popularmovies;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -30,9 +34,7 @@ import com.example.nikhil.popularmovies.Listeners.OnClickInterface;
 import com.example.nikhil.popularmovies.Listeners.OnTvClickInterface;
 import com.example.nikhil.popularmovies.Retrofit.ApiClient;
 import com.example.nikhil.popularmovies.Retrofit.ApiInterface;
-import com.example.nikhil.popularmovies.database.DatabaseProvider;
-import com.example.nikhil.popularmovies.database.MovieTable;
-import com.example.nikhil.popularmovies.database.TvTable;
+import com.example.nikhil.popularmovies.database.ContractClass;
 import com.example.nikhil.popularmovies.pojos.movie.Response;
 import com.example.nikhil.popularmovies.pojos.movie.Results;
 import com.example.nikhil.popularmovies.pojos.movie_details.MovieDetail;
@@ -62,37 +64,25 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private NavigationView navigationView;
     private TvAdapter tvAdapter;
-    private String data_type;
-    private long visibleItemIndex = 0;
+    private String dataType;
+    private int visibleItemIndex = 0;
     private GridLayoutManager layoutManager;
     private TextView textView_networkOffline;
+    private Parcelable state;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         textView_networkOffline = (TextView) findViewById(R.id.textView_networkOffline);
         progressBar.setVisibility(View.VISIBLE);
         movies = new ArrayList<>();
         tvShows = new ArrayList<>();
-
-        if(savedInstanceState != null)
-        {
-            data_type = savedInstanceState.getString("data_type");
-            if(data_type.equals("movies")) {
-                movies = savedInstanceState.getParcelableArrayList("movies_list");
-            }
-            else {
-                tvShows = savedInstanceState.getParcelableArrayList("tv_list");
-            }
-            setTitle(savedInstanceState.getString("title"));
-            visibleItemIndex = savedInstanceState.getLong("index");
-            progressBar.setVisibility(View.GONE);
-        }
         getSupportActionBar().setElevation(0);
 
-        // Bind Views
+        // Setup NavDrawer
         navigationView = (NavigationView) findViewById(R.id.navigation);
         navigationView.setItemIconTintList(null);
         drawer = (DrawerLayout) findViewById(R.id.drawer);
@@ -101,16 +91,17 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
         actionBarDrawerToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        /** Setup Stetho Library */
-        Stetho.initializeWithDefaults(this);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        layoutManager = new GridLayoutManager(this,2);
+        int orientation = this.getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            layoutManager = new GridLayoutManager(this,2);
+        }
+        else {
+            layoutManager = new GridLayoutManager(this,4);
+        }
         recyclerView.setLayoutManager(layoutManager);
-        layoutManager.scrollToPosition((int) visibleItemIndex);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        adapter = new MovieAdapter(this,this,movies);
-        tvAdapter = new TvAdapter(this,this,tvShows);
 
         // Check for network connectivity
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
@@ -126,15 +117,40 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
 
         if(savedInstanceState != null)
         {
-            if(!data_type.equals("movies"))
-                recyclerView.setAdapter(tvAdapter);
-            else
+            Log.d(TAG, "onCreate: savedInstanceState != null");
+            dataType = savedInstanceState.getString("data_type");
+            if(dataType.equals("movies")) {
+                movies = savedInstanceState.getParcelableArrayList("movies_list");
+                adapter = new MovieAdapter(this, this, movies);
                 recyclerView.setAdapter(adapter);
-        } else
+            }
+            else {
+                tvShows = savedInstanceState.getParcelableArrayList("tv_list");
+                tvAdapter = new TvAdapter(this, this, tvShows);
+                recyclerView.setAdapter(tvAdapter);
+            }
+            setTitle(savedInstanceState.getString("title"));
+            visibleItemIndex = savedInstanceState.getInt("index");
+            Log.d(TAG, "onCreate: visibleItemIndex " + String.valueOf(visibleItemIndex));
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    recyclerView.scrollToPosition(visibleItemIndex);
+                    layoutManager.scrollToPosition(visibleItemIndex);
+                }
+            }, 500);
+            progressBar.setVisibility(View.GONE);
+        } else {
+            Log.d(TAG, "onCreate: savedInstanceState == null");
+            adapter = new MovieAdapter(this, this, movies);
+            tvAdapter = new TvAdapter(this, this, tvShows);
             recyclerView.setAdapter(adapter);
+            getMovies(SORT_POPULARITY);
+            /** Setup Stetho Library */
+            Stetho.initializeWithDefaults(this);
+        }
 
         setupNavigationItemClick();
-        adapter.notifyDataSetChanged();
 
         MenuItem menuItem = navigationView.getMenu().findItem(R.id.menu_title_movies);
         SpannableString s = new SpannableString(menuItem.getTitle());
@@ -147,10 +163,6 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
         tv.setSpan(new ForegroundColorSpan(Color.WHITE),0,tv.length(),0);
         tv.setSpan(new AbsoluteSizeSpan(20,true),0,tv.length(),0);
         item.setTitle(tv);
-
-        // Retrofit Call
-        if(savedInstanceState == null)
-            getMovies(SORT_POPULARITY);
     }
 
     /**
@@ -185,14 +197,15 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
                     case R.id.menu_favourite_movie :
                         setTitle("Favourite Movies");
                         String[] projection = new String[]{
-                                MovieTable.COLUMN_ID,
-                                MovieTable.COLUMN_MOVIE_ID
+                                ContractClass.MovieProvider._ID,
+                                ContractClass.MovieProvider.COLUMN_MOVIE_ID
                         };
-                        Cursor cursor = getContentResolver().query(DatabaseProvider.MovieTableClass.CONTENT_URI,projection,null,null,null);
+                        Cursor cursor = getContentResolver().query(Uri.withAppendedPath(ContractClass.BASE_ITEM_URI, ContractClass.MovieProvider.PATH_TABLE),
+                                projection,null,null,null);
                         cursor.moveToFirst();
                         ArrayList<String> movie_ids = new ArrayList<String>();
                         for(int i=0;i< cursor.getCount();i++){
-                            String id = cursor.getString(cursor.getColumnIndex(MovieTable.COLUMN_MOVIE_ID));
+                            String id = cursor.getString(cursor.getColumnIndex(ContractClass.MovieProvider.COLUMN_MOVIE_ID));
                             Log.d(TAG, "onNavigationItemSelected: " + id);
                             cursor.moveToNext();
                             movie_ids.add(id);
@@ -206,14 +219,15 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
                     case R.id.menu_favourite_tv :
                         setTitle("Favourite Tv Shows");
                         String[] projection_tv = new String[]{
-                                TvTable.COLUMN_ID,
-                                TvTable.COLUMN_TEXT
+                                ContractClass.TvProvider._ID,
+                                ContractClass.TvProvider.COLUMN_TV_ID
                         };
-                        Cursor cursor_tv = getContentResolver().query(DatabaseProvider.TvTableClass.CONTENT_URI,projection_tv,null,null,null);
+                        Cursor cursor_tv = getContentResolver().query(Uri.withAppendedPath(ContractClass.BASE_ITEM_URI, ContractClass.TvProvider.PATH_TABLE),
+                                projection_tv,null,null,null);
                         cursor_tv.moveToFirst();
                         ArrayList<String> tv_ids = new ArrayList<String>();
                         for(int i=0;i< cursor_tv.getCount();i++){
-                            String id = cursor_tv.getString(cursor_tv.getColumnIndex(TvTable.COLUMN_TEXT));
+                            String id = cursor_tv.getString(cursor_tv.getColumnIndex(ContractClass.TvProvider.COLUMN_TV_ID));
                             Log.d(TAG, "onNavigationItemSelected: " + id);
                             cursor_tv.moveToNext();
                             tv_ids.add(id);
@@ -245,7 +259,7 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
                     if(response != null && response.body() != null){
                         TvDetails detail = response.body();
                         String id = detail.getId();
-                        String image_short = detail.getPoster_path();
+                        String image_short = detail.getPosterPath();
                         String title = detail.getName();
                         TvResults result = new TvResults(id,image_short,title);
                         Log.d(TAG, "onResponse: " + tvShows.size());
@@ -287,7 +301,7 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
                     if(response != null && response.body() != null){
                         MovieDetail detail = response.body();
                         String id = detail.getId();
-                        String image_short = detail.getPoster_path();
+                        String image_short = detail.getPosterPath();
                         String title = detail.getTitle();
                         Results result = new Results(id,image_short,title);
                         Log.d(TAG, "onResponse: " + movies.size());
@@ -331,8 +345,8 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
                     for(int i=0; i<tvShows.size();i++)
                     {
                         TvResults result = tvShows.get(i);
-                        Log.d(TAG, result.getOriginal_name());
-                        if(!result.getOriginal_language().equals("en"))
+                        Log.d(TAG, result.getOriginalName());
+                        if(!result.getOriginalLanguage().equals("en"))
                             tvShows.remove(i);
                     }
                 }
@@ -364,14 +378,14 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
                 movies.addAll(response1.getResults());
                 for(int i=0;i<movies.size();i++)
                 {
-                    if(movies.get(i).getPoster_path() == null ||
-                            movies.get(i).getPoster_path().contains("null") ||
+                    if(movies.get(i).getPosterPath() == null ||
+                            movies.get(i).getPosterPath().contains("null") ||
                             movies.get(i).equals("null") ||
-                            !movies.get(i).getOriginal_language().equals("en"))
+                            !movies.get(i).getOriginalLanguage().equals("en"))
                         movies.remove(i);
                 }
                 recyclerView.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
+                //adapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);
             }
 
@@ -405,9 +419,11 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
             outState.putString("data_type","movies");
             outState.putParcelableArrayList("movies_list", (ArrayList<Results>) movies);
         }
-        long index = layoutManager.findFirstCompletelyVisibleItemPosition();
-        outState.putLong("index",index);
+        int index = layoutManager.findFirstCompletelyVisibleItemPosition();
+        outState.putParcelable("state", layoutManager.onSaveInstanceState());
+        outState.putInt("index",index);
         outState.putString("title", (String) getTitle());
+        Log.d(TAG, "onSaveInstanceState: index = " + String.valueOf(index));
     }
 
     /**
@@ -422,7 +438,7 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
             // Open Details Activity to show the details of the movie.
             Intent intent = new Intent(MainActivity.this, DetailActivity.class);
             intent.putExtra("id",movie.getId());
-            intent.putExtra("image_short", movie.getPoster_path());
+            intent.putExtra("image_short", movie.getPosterPath());
             intent.putExtra("title", movie.getTitle());
             intent.putExtra("data_type","movie");
             startActivity(intent);
@@ -442,8 +458,8 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
             // Open Detail activity to show the details of the tv show.
             Intent intent = new Intent(MainActivity.this, DetailActivity.class);
             intent.putExtra("id",result.getId());
-            intent.putExtra("image_short",result.getPoster_path());
-            intent.putExtra("title",result.getOriginal_name());
+            intent.putExtra("image_short",result.getPosterPath());
+            intent.putExtra("title",result.getOriginalName());
             intent.putExtra("data_type","tv_show");
             startActivity(intent);
         } else {

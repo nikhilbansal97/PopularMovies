@@ -14,7 +14,7 @@ public class Cast {
     private String order;
 
     @SerializedName("credit_id")
-    private String credit_id;
+    private String creditId;
 
     @SerializedName("name")
     private String name;
@@ -23,10 +23,10 @@ public class Cast {
     private String gender;
 
     @SerializedName("cast_id")
-    private String cast_id;
+    private String castId;
 
     @SerializedName("profile_path")
-    private String profile_path;
+    private String profilePath;
 
     @SerializedName("character")
     private String character;
@@ -51,14 +51,14 @@ public class Cast {
         this.order = order;
     }
 
-    public String getCredit_id ()
+    public String getCreditId()
     {
-        return credit_id;
+        return creditId;
     }
 
-    public void setCredit_id (String credit_id)
+    public void setCreditId(String creditId)
     {
-        this.credit_id = credit_id;
+        this.creditId = creditId;
     }
 
     public String getName ()
@@ -81,24 +81,24 @@ public class Cast {
         this.gender = gender;
     }
 
-    public String getCast_id ()
+    public String getCastId()
     {
-        return cast_id;
+        return castId;
     }
 
-    public void setCast_id (String cast_id)
+    public void setCastId(String castId)
     {
-        this.cast_id = cast_id;
+        this.castId = castId;
     }
 
-    public String getProfile_path ()
+    public String getProfilePath()
     {
-        return profile_path;
+        return profilePath;
     }
 
-    public void setProfile_path (String profile_path)
+    public void setProfilePath(String profilePath)
     {
-        this.profile_path = profile_path;
+        this.profilePath = profilePath;
     }
 
     public String getCharacter ()
@@ -114,6 +114,6 @@ public class Cast {
     @Override
     public String toString()
     {
-        return "ClassPojo [id = "+id+", order = "+order+", credit_id = "+credit_id+", name = "+name+", gender = "+gender+", cast_id = "+cast_id+", profile_path = "+profile_path+", character = "+character+"]";
+        return "ClassPojo [id = "+id+", order = "+order+", creditId = "+ creditId +", name = "+name+", gender = "+gender+", castId = "+ castId +", profilePath = "+ profilePath +", character = "+character+"]";
     }
 }

@@ -13,15 +13,15 @@ public class Backdrops {
     @SerializedName("height")
     private String height;
     @SerializedName("vote_average")
-    private String vote_average;
+    private String voteAverage;
     @SerializedName("file_path")
-    private String file_path;
+    private String filePath;
     @SerializedName("width")
     private String width;
     @SerializedName("vote_count")
-    private String vote_count;
+    private String voteCount;
     @SerializedName("aspect_ratio")
-    private String aspect_ratio;
+    private String aspectRatio;
 
     public String getIso_639_1() {
         return iso_639_1;
@@ -39,20 +39,20 @@ public class Backdrops {
         this.height = height;
     }
 
-    public String getVote_average() {
-        return vote_average;
+    public String getVoteAverage() {
+        return voteAverage;
     }
 
-    public void setVote_average(String vote_average) {
-        this.vote_average = vote_average;
+    public void setVoteAverage(String voteAverage) {
+        this.voteAverage = voteAverage;
     }
 
-    public String getFile_path() {
-        return file_path;
+    public String getFilePath() {
+        return filePath;
     }
 
-    public void setFile_path(String file_path) {
-        this.file_path = file_path;
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
     }
 
     public String getWidth() {
@@ -63,24 +63,24 @@ public class Backdrops {
         this.width = width;
     }
 
-    public String getVote_count() {
-        return vote_count;
+    public String getVoteCount() {
+        return voteCount;
     }
 
-    public void setVote_count(String vote_count) {
-        this.vote_count = vote_count;
+    public void setVoteCount(String voteCount) {
+        this.voteCount = voteCount;
     }
 
-    public String getAspect_ratio() {
-        return aspect_ratio;
+    public String getAspectRatio() {
+        return aspectRatio;
     }
 
-    public void setAspect_ratio(String aspect_ratio) {
-        this.aspect_ratio = aspect_ratio;
+    public void setAspectRatio(String aspectRatio) {
+        this.aspectRatio = aspectRatio;
     }
 
     @Override
     public String toString() {
-        return "ClassPojo [iso_639_1 = " + iso_639_1 + ", height = " + height + ", vote_average = " + vote_average + ", file_path = " + file_path + ", width = " + width + ", vote_count = " + vote_count + ", aspect_ratio = " + aspect_ratio + "]";
+        return "ClassPojo [iso_639_1 = " + iso_639_1 + ", height = " + height + ", voteAverage = " + voteAverage + ", filePath = " + filePath + ", width = " + width + ", voteCount = " + voteCount + ", aspectRatio = " + aspectRatio + "]";
     }
 }

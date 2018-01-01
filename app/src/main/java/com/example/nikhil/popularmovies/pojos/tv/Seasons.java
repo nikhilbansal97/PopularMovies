@@ -12,16 +12,16 @@ public class Seasons {
     private String id;
 
     @SerializedName("season_number")
-    private String season_number;
+    private String seasonNumber;
 
     @SerializedName("episode_count")
-    private String episode_count;
+    private String episodeCount;
 
     @SerializedName("air_date")
-    private String air_date;
+    private String airDate;
 
     @SerializedName("poster_path")
-    private String poster_path;
+    private String posterPath;
 
     public String getId ()
     {
@@ -33,49 +33,49 @@ public class Seasons {
         this.id = id;
     }
 
-    public String getSeason_number ()
+    public String getSeasonNumber()
     {
-        return season_number;
+        return seasonNumber;
     }
 
-    public void setSeason_number (String season_number)
+    public void setSeasonNumber(String seasonNumber)
     {
-        this.season_number = season_number;
+        this.seasonNumber = seasonNumber;
     }
 
-    public String getEpisode_count ()
+    public String getEpisodeCount()
     {
-        return episode_count;
+        return episodeCount;
     }
 
-    public void setEpisode_count (String episode_count)
+    public void setEpisodeCount(String episodeCount)
     {
-        this.episode_count = episode_count;
+        this.episodeCount = episodeCount;
     }
 
-    public String getAir_date ()
+    public String getAirDate()
     {
-        return air_date;
+        return airDate;
     }
 
-    public void setAir_date (String air_date)
+    public void setAirDate(String airDate)
     {
-        this.air_date = air_date;
+        this.airDate = airDate;
     }
 
-    public String getPoster_path ()
+    public String getPosterPath()
     {
-        return poster_path;
+        return posterPath;
     }
 
-    public void setPoster_path (String poster_path)
+    public void setPosterPath(String posterPath)
     {
-        this.poster_path = poster_path;
+        this.posterPath = posterPath;
     }
 
     @Override
     public String toString()
     {
-        return "ClassPojo [id = "+id+", season_number = "+season_number+", episode_count = "+episode_count+", air_date = "+air_date+", poster_path = "+poster_path+"]";
+        return "ClassPojo [id = "+id+", seasonNumber = "+ seasonNumber +", episodeCount = "+ episodeCount +", airDate = "+ airDate +", posterPath = "+ posterPath +"]";
     }
 }

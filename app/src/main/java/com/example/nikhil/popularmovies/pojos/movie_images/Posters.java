@@ -12,15 +12,15 @@ public class Posters
     @SerializedName("height")
     private String height;
     @SerializedName("vote_average")
-    private String vote_average;
+    private String voteAverage;
     @SerializedName("file_path")
-    private String file_path;
+    private String filePath;
     @SerializedName("width")
     private String width;
     @SerializedName("vote_count")
-    private String vote_count;
+    private String voteCount;
     @SerializedName("aspect_ratio")
-    private String aspect_ratio;
+    private String aspectRatio;
 
     public String getIso_639_1 ()
     {
@@ -42,24 +42,24 @@ public class Posters
         this.height = height;
     }
 
-    public String getVote_average ()
+    public String getVoteAverage()
     {
-        return vote_average;
+        return voteAverage;
     }
 
-    public void setVote_average (String vote_average)
+    public void setVoteAverage(String voteAverage)
     {
-        this.vote_average = vote_average;
+        this.voteAverage = voteAverage;
     }
 
-    public String getFile_path ()
+    public String getFilePath()
     {
-        return file_path;
+        return filePath;
     }
 
-    public void setFile_path (String file_path)
+    public void setFilePath(String filePath)
     {
-        this.file_path = file_path;
+        this.filePath = filePath;
     }
 
     public String getWidth ()
@@ -72,29 +72,29 @@ public class Posters
         this.width = width;
     }
 
-    public String getVote_count ()
+    public String getVoteCount()
     {
-        return vote_count;
+        return voteCount;
     }
 
-    public void setVote_count (String vote_count)
+    public void setVoteCount(String voteCount)
     {
-        this.vote_count = vote_count;
+        this.voteCount = voteCount;
     }
 
-    public String getAspect_ratio ()
+    public String getAspectRatio()
     {
-        return aspect_ratio;
+        return aspectRatio;
     }
 
-    public void setAspect_ratio (String aspect_ratio)
+    public void setAspectRatio(String aspectRatio)
     {
-        this.aspect_ratio = aspect_ratio;
+        this.aspectRatio = aspectRatio;
     }
 
     @Override
     public String toString()
     {
-        return "ClassPojo [iso_639_1 = "+iso_639_1+", height = "+height+", vote_average = "+vote_average+", file_path = "+file_path+", width = "+width+", vote_count = "+vote_count+", aspect_ratio = "+aspect_ratio+"]";
+        return "ClassPojo [iso_639_1 = "+iso_639_1+", height = "+height+", voteAverage = "+ voteAverage +", filePath = "+ filePath +", width = "+width+", voteCount = "+ voteCount +", aspectRatio = "+ aspectRatio +"]";
     }
 }
