@@ -12,10 +12,10 @@ import com.google.gson.annotations.SerializedName;
 public class Results implements Parcelable {
 
     @SerializedName("vote_average")
-    private String vote_average;
+    private String voteAverage;
 
     @SerializedName("backdrop_path")
-    private String backdrop_path;
+    private String backdropPath;
 
     @SerializedName("adult")
     private String adult;
@@ -30,22 +30,22 @@ public class Results implements Parcelable {
     private String overview;
 
     @SerializedName("original_language")
-    private String original_language;
+    private String originalLanguage;
 
     @SerializedName("genre_ids")
-    private String[] genre_ids;
+    private String[] genreIds;
 
     @SerializedName("release_date")
-    private String release_date;
+    private String releaseDate;
 
     @SerializedName("original_title")
-    private String original_title;
+    private String originalTitle;
 
     @SerializedName("vote_count")
-    private String vote_count;
+    private String voteCount;
 
     @SerializedName("poster_path")
-    private String poster_path;
+    private String posterPath;
 
     @SerializedName("video")
     private String video;
@@ -54,18 +54,18 @@ public class Results implements Parcelable {
     private String popularity;
 
     protected Results(Parcel in) {
-        vote_average = in.readString();
-        backdrop_path = in.readString();
+        voteAverage = in.readString();
+        backdropPath = in.readString();
         adult = in.readString();
         id = in.readString();
         title = in.readString();
         overview = in.readString();
-        original_language = in.readString();
-        genre_ids = in.createStringArray();
-        release_date = in.readString();
-        original_title = in.readString();
-        vote_count = in.readString();
-        poster_path = in.readString();
+        originalLanguage = in.readString();
+        genreIds = in.createStringArray();
+        releaseDate = in.readString();
+        originalTitle = in.readString();
+        voteCount = in.readString();
+        posterPath = in.readString();
         video = in.readString();
         popularity = in.readString();
     }
@@ -82,20 +82,20 @@ public class Results implements Parcelable {
         }
     };
 
-    public String getVote_average() {
-        return vote_average;
+    public String getVoteAverage() {
+        return voteAverage;
     }
 
-    public void setVote_average(String vote_average) {
-        this.vote_average = vote_average;
+    public void setVoteAverage(String voteAverage) {
+        this.voteAverage = voteAverage;
     }
 
-    public String getBackdrop_path() {
-        return backdrop_path;
+    public String getBackdropPath() {
+        return backdropPath;
     }
 
-    public void setBackdrop_path(String backdrop_path) {
-        this.backdrop_path = backdrop_path;
+    public void setBackdropPath(String backdropPath) {
+        this.backdropPath = backdropPath;
     }
 
     public String getAdult() {
@@ -130,52 +130,52 @@ public class Results implements Parcelable {
         this.overview = overview;
     }
 
-    public String getOriginal_language() {
-        return original_language;
+    public String getOriginalLanguage() {
+        return originalLanguage;
     }
 
-    public void setOriginal_language(String original_language) {
-        this.original_language = original_language;
+    public void setOriginalLanguage(String originalLanguage) {
+        this.originalLanguage = originalLanguage;
     }
 
-    public String[] getGenre_ids() {
-        return genre_ids;
+    public String[] getGenreIds() {
+        return genreIds;
     }
 
-    public void setGenre_ids(String[] genre_ids) {
-        this.genre_ids = genre_ids;
+    public void setGenreIds(String[] genreIds) {
+        this.genreIds = genreIds;
     }
 
-    public String getRelease_date() {
-        return release_date;
+    public String getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setRelease_date(String release_date) {
-        this.release_date = release_date;
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
-    public String getOriginal_title() {
-        return original_title;
+    public String getOriginalTitle() {
+        return originalTitle;
     }
 
-    public void setOriginal_title(String original_title) {
-        this.original_title = original_title;
+    public void setOriginalTitle(String originalTitle) {
+        this.originalTitle = originalTitle;
     }
 
-    public String getVote_count() {
-        return vote_count;
+    public String getVoteCount() {
+        return voteCount;
     }
 
-    public void setVote_count(String vote_count) {
-        this.vote_count = vote_count;
+    public void setVoteCount(String voteCount) {
+        this.voteCount = voteCount;
     }
 
-    public String getPoster_path() {
-        return poster_path;
+    public String getPosterPath() {
+        return posterPath;
     }
 
-    public void setPoster_path(String poster_path) {
-        this.poster_path = poster_path;
+    public void setPosterPath(String posterPath) {
+        this.posterPath = posterPath;
     }
 
     public String getVideo() {
@@ -196,7 +196,7 @@ public class Results implements Parcelable {
 
     @Override
     public String toString() {
-        return "ClassPojo [vote_average = " + vote_average + ", backdrop_path = " + backdrop_path + ", adult = " + adult + ", id = " + id + ", title = " + title + ", overview = " + overview + ", original_language = " + original_language + ", genre_ids = " + genre_ids + ", release_date = " + release_date + ", original_title = " + original_title + ", vote_count = " + vote_count + ", poster_path = " + poster_path + ", video = " + video + ", popularity = " + popularity + "]";
+        return "ClassPojo [voteAverage = " + voteAverage + ", backdropPath = " + backdropPath + ", adult = " + adult + ", id = " + id + ", title = " + title + ", overview = " + overview + ", originalLanguage = " + originalLanguage + ", genreIds = " + genreIds + ", releaseDate = " + releaseDate + ", originalTitle = " + originalTitle + ", voteCount = " + voteCount + ", posterPath = " + posterPath + ", video = " + video + ", popularity = " + popularity + "]";
     }
 
     @Override
@@ -206,18 +206,18 @@ public class Results implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(vote_average);
-        parcel.writeString(backdrop_path);
+        parcel.writeString(voteAverage);
+        parcel.writeString(backdropPath);
         parcel.writeString(adult);
         parcel.writeString(id);
         parcel.writeString(title);
         parcel.writeString(overview);
-        parcel.writeString(original_language);
-        parcel.writeStringArray(genre_ids);
-        parcel.writeString(release_date);
-        parcel.writeString(original_title);
-        parcel.writeString(vote_count);
-        parcel.writeString(poster_path);
+        parcel.writeString(originalLanguage);
+        parcel.writeStringArray(genreIds);
+        parcel.writeString(releaseDate);
+        parcel.writeString(originalTitle);
+        parcel.writeString(voteCount);
+        parcel.writeString(posterPath);
         parcel.writeString(video);
         parcel.writeString(popularity);
     }

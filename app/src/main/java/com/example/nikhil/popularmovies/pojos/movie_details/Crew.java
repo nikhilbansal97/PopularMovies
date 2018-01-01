@@ -11,7 +11,7 @@ public class Crew {
     private String id;
 
     @SerializedName("credit_id")
-    private String credit_id;
+    private String creditId;
 
     @SerializedName("department")
     private String department;
@@ -26,7 +26,7 @@ public class Crew {
     private String gender;
 
     @SerializedName("profile_path")
-    private String profile_path;
+    private String profilePath;
 
     public String getId ()
     {
@@ -38,14 +38,14 @@ public class Crew {
         this.id = id;
     }
 
-    public String getCredit_id ()
+    public String getCreditId()
     {
-        return credit_id;
+        return creditId;
     }
 
-    public void setCredit_id (String credit_id)
+    public void setCreditId(String creditId)
     {
-        this.credit_id = credit_id;
+        this.creditId = creditId;
     }
 
     public String getDepartment ()
@@ -88,19 +88,19 @@ public class Crew {
         this.gender = gender;
     }
 
-    public String getProfile_path ()
+    public String getProfilePath()
     {
-        return profile_path;
+        return profilePath;
     }
 
-    public void setProfile_path (String profile_path)
+    public void setProfilePath(String profilePath)
     {
-        this.profile_path = profile_path;
+        this.profilePath = profilePath;
     }
 
     @Override
     public String toString()
     {
-        return "ClassPojo [id = "+id+", credit_id = "+credit_id+", department = "+department+", name = "+name+", job = "+job+", gender = "+gender+", profile_path = "+profile_path+"]";
+        return "ClassPojo [id = "+id+", creditId = "+ creditId +", department = "+department+", name = "+name+", job = "+job+", gender = "+gender+", profilePath = "+ profilePath +"]";
     }
 }

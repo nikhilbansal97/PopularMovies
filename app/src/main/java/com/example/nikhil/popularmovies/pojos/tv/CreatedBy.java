@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
  * Created by nikhil on 24/8/17.
  */
 
-public class Created_by {
+public class CreatedBy {
 
     @SerializedName("id")
     private String id;
@@ -18,7 +18,7 @@ public class Created_by {
     private String gender;
 
     @SerializedName("profile_path")
-    private String profile_path;
+    private String profilePath;
 
     public String getId ()
     {
@@ -50,19 +50,19 @@ public class Created_by {
         this.gender = gender;
     }
 
-    public String getProfile_path ()
+    public String getProfilePath()
     {
-        return profile_path;
+        return profilePath;
     }
 
-    public void setProfile_path (String profile_path)
+    public void setProfilePath(String profilePath)
     {
-        this.profile_path = profile_path;
+        this.profilePath = profilePath;
     }
 
     @Override
     public String toString()
     {
-        return "ClassPojo [id = "+id+", name = "+name+", gender = "+gender+", profile_path = "+profile_path+"]";
+        return "ClassPojo [id = "+id+", name = "+name+", gender = "+gender+", profilePath = "+ profilePath +"]";
     }
 }

@@ -40,7 +40,7 @@ public class CastAdapter extends RecyclerView.Adapter<CastAdapter.CastHolder>{
     @Override
     public void onBindViewHolder(CastHolder holder, int position) {
         Cast cast = castList.get(position);
-        Picasso.with(context).load("https://image.tmdb.org/t/p/w500" + cast.getProfile_path()).into(holder.imageView);
+        Picasso.with(context).load("https://image.tmdb.org/t/p/w500" + cast.getProfilePath()).into(holder.imageView);
     }
 
     @Override

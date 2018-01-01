@@ -5,21 +5,22 @@ import com.google.gson.annotations.SerializedName;
 /**
  * Created by nikhil on 11/7/17.
  */
-public class Production_companies
+
+public class SpokenLanguages
 {
-    @SerializedName("id")
-    private String id;
+    @SerializedName("iso_639_1")
+    private String iso_639_1;
     @SerializedName("name")
     private String name;
 
-    public String getId ()
+    public String getIso_639_1 ()
     {
-        return id;
+        return iso_639_1;
     }
 
-    public void setId (String id)
+    public void setIso_639_1 (String iso_639_1)
     {
-        this.id = id;
+        this.iso_639_1 = iso_639_1;
     }
 
     public String getName ()
@@ -35,6 +36,6 @@ public class Production_companies
     @Override
     public String toString()
     {
-        return "ClassPojo [id = "+id+", name = "+name+"]";
+        return "ClassPojo [iso_639_1 = "+iso_639_1+", name = "+name+"]";
     }
 }

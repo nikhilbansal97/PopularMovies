@@ -42,8 +42,8 @@ public class TvAdapter extends RecyclerView.Adapter<TvAdapter.TvViewHolder>{
     @Override
     public void onBindViewHolder(TvViewHolder holder, int position) {
         final TvResults result = tvShows.get(position);
-        Glide.with(context).load("https://image.tmdb.org/t/p/w500"+result.getPoster_path()).into(holder.imageView);
-        Log.d(TAG, result.getOriginal_name());
+        Glide.with(context).load("https://image.tmdb.org/t/p/w500"+result.getPosterPath()).into(holder.imageView);
+        Log.d(TAG, result.getOriginalName());
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

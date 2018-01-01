@@ -177,10 +177,10 @@ public class DetailActivity extends AppCompatActivity {
         recyclerViewCrew.setItemAnimator(new DefaultItemAnimator());
         recyclerViewCrew.setAdapter(castAdapter);
 
-        Picasso.with(mContext).load("https://image.tmdb.org/t/p/w500" + detail.getBackdrop_path()).into(imageViewMoviePoster);
+        Picasso.with(mContext).load("https://image.tmdb.org/t/p/w500" + detail.getBackdropPath()).into(imageViewMoviePoster);
         Picasso.with(mContext).load("https://image.tmdb.org/t/p/w500" + image_url_short).centerCrop().resize(225, 400).into(imageViewMoviePosterSmall);
-        textViewMovieTitle.setText(detail.getOriginal_name());
-        textViewMovieRatingValue.setText(detail.getVote_average());
+        textViewMovieTitle.setText(detail.getOriginalName());
+        textViewMovieRatingValue.setText(detail.getVoteAverage());
         textViewMovieOverviewValue.setText(detail.getOverview());
         mPhotosList.clear();
         mPhotosList.addAll(detail.getImages().getBackdrops());
@@ -335,10 +335,10 @@ public class DetailActivity extends AppCompatActivity {
         recyclerViewCrew.setItemAnimator(new DefaultItemAnimator());
         recyclerViewCrew.setAdapter(castAdapter);
         textViewMovieRuntimeValue.setVisibility(View.VISIBLE);
-        Picasso.with(mContext).load("https://image.tmdb.org/t/p/w500" + detail.getBackdrop_path()).into(imageViewMoviePoster);
+        Picasso.with(mContext).load("https://image.tmdb.org/t/p/w500" + detail.getBackdropPath()).into(imageViewMoviePoster);
         Picasso.with(mContext).load("https://image.tmdb.org/t/p/w500" + image_url_short).centerCrop().resize(225, 400).into(imageViewMoviePosterSmall);
-        textViewMovieTitle.setText(detail.getOriginal_title());
-        textViewMovieRatingValue.setText(detail.getVote_average());
+        textViewMovieTitle.setText(detail.getOriginalTitle());
+        textViewMovieRatingValue.setText(detail.getVoteAverage());
         textViewMovieOverviewValue.setText(detail.getOverview());
         mPhotosList.clear();
         mPhotosList.addAll(detail.getImages().getBackdrops());
@@ -350,7 +350,7 @@ public class DetailActivity extends AppCompatActivity {
         textViewMovieRuntimeValue.setText(detail.getRuntime());
         SimpleDateFormat oldDate = new SimpleDateFormat("yyyy-dd-mm");
         SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy ");
-        String date = detail.getRelease_date();
+        String date = detail.getReleaseDate();
         try {
             date = dateFormat.format(oldDate.parse(date));
         } catch (ParseException e) {

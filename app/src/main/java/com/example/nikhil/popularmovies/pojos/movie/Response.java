@@ -17,10 +17,10 @@ public class Response {
     private String page;
 
     @SerializedName("total_pages")
-    private String total_pages;
+    private String totalPages;
 
     @SerializedName("total_results")
-    private String total_results;
+    private String totalResults;
 
     public List<Results> getResults() {
         return results;
@@ -38,24 +38,24 @@ public class Response {
         this.page = page;
     }
 
-    public String getTotal_pages() {
-        return total_pages;
+    public String getTotalPages() {
+        return totalPages;
     }
 
-    public void setTotal_pages(String total_pages) {
-        this.total_pages = total_pages;
+    public void setTotalPages(String totalPages) {
+        this.totalPages = totalPages;
     }
 
-    public String getTotal_results() {
-        return total_results;
+    public String getTotalResults() {
+        return totalResults;
     }
 
-    public void setTotal_results(String total_results) {
-        this.total_results = total_results;
+    public void setTotalResults(String totalResults) {
+        this.totalResults = totalResults;
     }
 
     @Override
     public String toString() {
-        return "ClassPojo [results = " + results + ", page = " + page + ", total_pages = " + total_pages + ", total_results = " + total_results + "]";
+        return "ClassPojo [results = " + results + ", page = " + page + ", totalPages = " + totalPages + ", totalResults = " + totalResults + "]";
     }
 }

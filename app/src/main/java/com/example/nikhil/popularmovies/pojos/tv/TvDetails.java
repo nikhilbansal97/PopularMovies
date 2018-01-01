@@ -1,7 +1,7 @@
 package com.example.nikhil.popularmovies.pojos.tv;
 
 import com.example.nikhil.popularmovies.pojos.movie_details.Genres;
-import com.example.nikhil.popularmovies.pojos.movie_details.Production_companies;
+import com.example.nikhil.popularmovies.pojos.movie_details.ProductionCompanies;
 import com.example.nikhil.popularmovies.pojos.movie_images.Images;
 import com.google.gson.annotations.SerializedName;
 
@@ -14,13 +14,13 @@ import java.util.List;
 public class TvDetails {
 
     @SerializedName("vote_average")
-    private String vote_average;
+    private String voteAverage;
 
     @SerializedName("genres")
     private List<Genres> genres;
 
     @SerializedName("episode_run_time")
-    private String[] episode_run_time;
+    private String[] episodeRunTime;
 
     @SerializedName("type")
     private String type;
@@ -32,13 +32,13 @@ public class TvDetails {
     private String[] languages;
 
     @SerializedName("number_of_seasons")
-    private String number_of_seasons;
+    private String numberOfSeasons;
 
     @SerializedName("last_air_date")
-    private String last_air_date;
+    private String lastAirDate;
 
     @SerializedName("in_production")
-    private String in_production;
+    private String inProduction;
 
     @SerializedName("name")
     private String name;
@@ -50,37 +50,37 @@ public class TvDetails {
     private List<Networks> networks;
 
     @SerializedName("created_by")
-    private Created_by[] created_by;
+    private CreatedBy[] createdBy;
 
     @SerializedName("backdrop_path")
-    private String backdrop_path;
+    private String backdropPath;
 
     @SerializedName("status")
     private String status;
 
     @SerializedName("number_of_episodes")
-    private String number_of_episodes;
+    private String numberOfEpisodes;
 
     @SerializedName("original_name")
-    private String original_name;
+    private String originalName;
 
     @SerializedName("homepage")
     private String homepage;
 
     @SerializedName("first_air_date")
-    private String first_air_date;
+    private String firstAirDate;
 
     @SerializedName("origin_country")
-    private String[] origin_country;
+    private String[] originCountry;
 
     @SerializedName("original_language")
-    private String original_language;
+    private String originalLanguage;
 
     @SerializedName("overview")
     private String overview;
 
     @SerializedName("production_companies")
-    private List<Production_companies> production_companies;
+    private List<ProductionCompanies> productionCompanies;
 
     @SerializedName("seasons")
     private List<Seasons> seasons;
@@ -89,19 +89,19 @@ public class TvDetails {
     private Images images;
 
     @SerializedName("vote_count")
-    private String vote_count;
+    private String voteCount;
 
     @SerializedName("poster_path")
-    private String poster_path;
+    private String posterPath;
 
-    public String getVote_average ()
+    public String getVoteAverage()
     {
-        return vote_average;
+        return voteAverage;
     }
 
-    public void setVote_average (String vote_average)
+    public void setVoteAverage(String voteAverage)
     {
-        this.vote_average = vote_average;
+        this.voteAverage = voteAverage;
     }
 
     public List<Genres> getGenres ()
@@ -114,14 +114,14 @@ public class TvDetails {
         this.genres = genres;
     }
 
-    public String[] getEpisode_run_time ()
+    public String[] getEpisodeRunTime()
     {
-        return episode_run_time;
+        return episodeRunTime;
     }
 
-    public void setEpisode_run_time (String[] episode_run_time)
+    public void setEpisodeRunTime(String[] episodeRunTime)
     {
-        this.episode_run_time = episode_run_time;
+        this.episodeRunTime = episodeRunTime;
     }
 
     public String getType ()
@@ -154,34 +154,34 @@ public class TvDetails {
         this.languages = languages;
     }
 
-    public String getNumber_of_seasons ()
+    public String getNumberOfSeasons()
     {
-        return number_of_seasons;
+        return numberOfSeasons;
     }
 
-    public void setNumber_of_seasons (String number_of_seasons)
+    public void setNumberOfSeasons(String numberOfSeasons)
     {
-        this.number_of_seasons = number_of_seasons;
+        this.numberOfSeasons = numberOfSeasons;
     }
 
-    public String getLast_air_date ()
+    public String getLastAirDate()
     {
-        return last_air_date;
+        return lastAirDate;
     }
 
-    public void setLast_air_date (String last_air_date)
+    public void setLastAirDate(String lastAirDate)
     {
-        this.last_air_date = last_air_date;
+        this.lastAirDate = lastAirDate;
     }
 
-    public String getIn_production ()
+    public String getInProduction()
     {
-        return in_production;
+        return inProduction;
     }
 
-    public void setIn_production (String in_production)
+    public void setInProduction(String inProduction)
     {
-        this.in_production = in_production;
+        this.inProduction = inProduction;
     }
 
     public String getName ()
@@ -214,24 +214,24 @@ public class TvDetails {
         this.networks = networks;
     }
 
-    public Created_by[] getCreated_by ()
+    public CreatedBy[] getCreatedBy()
     {
-        return created_by;
+        return createdBy;
     }
 
-    public void setCreated_by (Created_by[] created_by)
+    public void setCreatedBy(CreatedBy[] createdBy)
     {
-        this.created_by = created_by;
+        this.createdBy = createdBy;
     }
 
-    public String getBackdrop_path ()
+    public String getBackdropPath()
     {
-        return backdrop_path;
+        return backdropPath;
     }
 
-    public void setBackdrop_path (String backdrop_path)
+    public void setBackdropPath(String backdropPath)
     {
-        this.backdrop_path = backdrop_path;
+        this.backdropPath = backdropPath;
     }
 
     public String getStatus ()
@@ -244,24 +244,24 @@ public class TvDetails {
         this.status = status;
     }
 
-    public String getNumber_of_episodes ()
+    public String getNumberOfEpisodes()
     {
-        return number_of_episodes;
+        return numberOfEpisodes;
     }
 
-    public void setNumber_of_episodes (String number_of_episodes)
+    public void setNumberOfEpisodes(String numberOfEpisodes)
     {
-        this.number_of_episodes = number_of_episodes;
+        this.numberOfEpisodes = numberOfEpisodes;
     }
 
-    public String getOriginal_name ()
+    public String getOriginalName()
     {
-        return original_name;
+        return originalName;
     }
 
-    public void setOriginal_name (String original_name)
+    public void setOriginalName(String originalName)
     {
-        this.original_name = original_name;
+        this.originalName = originalName;
     }
 
     public String getHomepage ()
@@ -274,34 +274,34 @@ public class TvDetails {
         this.homepage = homepage;
     }
 
-    public String getFirst_air_date ()
+    public String getFirstAirDate()
     {
-        return first_air_date;
+        return firstAirDate;
     }
 
-    public void setFirst_air_date (String first_air_date)
+    public void setFirstAirDate(String firstAirDate)
     {
-        this.first_air_date = first_air_date;
+        this.firstAirDate = firstAirDate;
     }
 
-    public String[] getOrigin_country ()
+    public String[] getOriginCountry()
     {
-        return origin_country;
+        return originCountry;
     }
 
-    public void setOrigin_country (String[] origin_country)
+    public void setOriginCountry(String[] originCountry)
     {
-        this.origin_country = origin_country;
+        this.originCountry = originCountry;
     }
 
-    public String getOriginal_language ()
+    public String getOriginalLanguage()
     {
-        return original_language;
+        return originalLanguage;
     }
 
-    public void setOriginal_language (String original_language)
+    public void setOriginalLanguage(String originalLanguage)
     {
-        this.original_language = original_language;
+        this.originalLanguage = originalLanguage;
     }
 
     public String getOverview ()
@@ -314,14 +314,14 @@ public class TvDetails {
         this.overview = overview;
     }
 
-    public List<Production_companies> getProduction_companies ()
+    public List<ProductionCompanies> getProductionCompanies()
     {
-        return production_companies;
+        return productionCompanies;
     }
 
-    public void setProduction_companies (List<Production_companies> production_companies)
+    public void setProductionCompanies(List<ProductionCompanies> productionCompanies)
     {
-        this.production_companies = production_companies;
+        this.productionCompanies = productionCompanies;
     }
 
     public List<Seasons> getSeasons ()
@@ -344,29 +344,29 @@ public class TvDetails {
         this.images = images;
     }
 
-    public String getVote_count ()
+    public String getVoteCount()
     {
-        return vote_count;
+        return voteCount;
     }
 
-    public void setVote_count (String vote_count)
+    public void setVoteCount(String voteCount)
     {
-        this.vote_count = vote_count;
+        this.voteCount = voteCount;
     }
 
-    public String getPoster_path ()
+    public String getPosterPath()
     {
-        return poster_path;
+        return posterPath;
     }
 
-    public void setPoster_path (String poster_path)
+    public void setPosterPath(String posterPath)
     {
-        this.poster_path = poster_path;
+        this.posterPath = posterPath;
     }
 
     @Override
     public String toString()
     {
-        return "ClassPojo [vote_average = "+vote_average+", genres = "+genres+", episode_run_time = "+episode_run_time+", type = "+type+", id = "+id+", languages = "+languages+", number_of_seasons = "+number_of_seasons+", last_air_date = "+last_air_date+", in_production = "+in_production+", name = "+name+", popularity = "+popularity+", networks = "+networks+", created_by = "+created_by+", backdrop_path = "+backdrop_path+", status = "+status+", number_of_episodes = "+number_of_episodes+", original_name = "+original_name+", homepage = "+homepage+", first_air_date = "+first_air_date+", origin_country = "+origin_country+", original_language = "+original_language+", overview = "+overview+", production_companies = "+production_companies+", seasons = "+seasons+", images = "+images+", vote_count = "+vote_count+", poster_path = "+poster_path+"]";
+        return "ClassPojo [voteAverage = "+ voteAverage +", genres = "+genres+", episodeRunTime = "+ episodeRunTime +", type = "+type+", id = "+id+", languages = "+languages+", numberOfSeasons = "+ numberOfSeasons +", lastAirDate = "+ lastAirDate +", inProduction = "+ inProduction +", name = "+name+", popularity = "+popularity+", networks = "+networks+", createdBy = "+ createdBy +", backdropPath = "+ backdropPath +", status = "+status+", numberOfEpisodes = "+ numberOfEpisodes +", originalName = "+ originalName +", homepage = "+homepage+", firstAirDate = "+ firstAirDate +", originCountry = "+ originCountry +", originalLanguage = "+ originalLanguage +", overview = "+overview+", productionCompanies = "+ productionCompanies +", seasons = "+seasons+", images = "+images+", voteCount = "+ voteCount +", posterPath = "+ posterPath +"]";
     }
 }

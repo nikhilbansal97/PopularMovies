@@ -6,16 +6,16 @@ import com.google.gson.annotations.SerializedName;
  * Created by nikhil on 11/7/17.
  */
 
-public class Belongs_To_Collection
+public class BelongsToCollection
 {
     @SerializedName("id")
     private String id;
     @SerializedName("backdrop_path")
-    private String backdrop_path;
+    private String backdropPath;
     @SerializedName("name")
     private String name;
     @SerializedName("poster_path")
-    private String poster_path;
+    private String posterPath;
 
     public String getId ()
     {
@@ -27,14 +27,14 @@ public class Belongs_To_Collection
         this.id = id;
     }
 
-    public String getBackdrop_path ()
+    public String getBackdropPath()
     {
-        return backdrop_path;
+        return backdropPath;
     }
 
-    public void setBackdrop_path (String backdrop_path)
+    public void setBackdropPath(String backdropPath)
     {
-        this.backdrop_path = backdrop_path;
+        this.backdropPath = backdropPath;
     }
 
     public String getName ()
@@ -47,19 +47,19 @@ public class Belongs_To_Collection
         this.name = name;
     }
 
-    public String getPoster_path ()
+    public String getPosterPath()
     {
-        return poster_path;
+        return posterPath;
     }
 
-    public void setPoster_path (String poster_path)
+    public void setPosterPath(String posterPath)
     {
-        this.poster_path = poster_path;
+        this.posterPath = posterPath;
     }
 
     @Override
     public String toString()
     {
-        return "ClassPojo [id = "+id+", backdrop_path = "+backdrop_path+", name = "+name+", poster_path = "+poster_path+"]";
+        return "ClassPojo [id = "+id+", backdropPath = "+ backdropPath +", name = "+name+", posterPath = "+ posterPath +"]";
     }
 }

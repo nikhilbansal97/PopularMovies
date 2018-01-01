@@ -39,7 +39,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 
-public class MainActivity extends AppCompatActivity implements OnClickInterface,OnTvClickInterface{
+public class MainActivity extends AppCompatActivity implements OnClickInterface, OnTvClickInterface {
 
     private static final String TAG = "MainActivity";
     private RecyclerView recyclerView;
@@ -69,10 +69,9 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
         movies = new ArrayList<>();
         tvShows = new ArrayList<>();
 
-        if(savedInstanceState != null)
-        {
+        if (savedInstanceState != null) {
             data_type = savedInstanceState.getString("data_type");
-            if(data_type.equals("movies"))
+            if (data_type.equals("movies"))
                 movies = savedInstanceState.getParcelableArrayList("movies_list");
             else
                 tvShows = savedInstanceState.getParcelableArrayList("tv_list");
@@ -85,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
         navigationView = (NavigationView) findViewById(R.id.navigation);
         navigationView.setItemIconTintList(null);
         drawer = (DrawerLayout) findViewById(R.id.drawer);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawer,R.string.open,R.string.close);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawer, R.string.open, R.string.close);
         drawer.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -94,28 +93,26 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
         Stetho.initializeWithDefaults(this);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        layoutManager = new GridLayoutManager(this,2);
+        layoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);
         layoutManager.scrollToPosition((int) visibleItemIndex);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        adapter = new MovieAdapter(this,this,movies);
-        tvAdapter = new TvAdapter(this,this,tvShows);
+        adapter = new MovieAdapter(this, this, movies);
+        tvAdapter = new TvAdapter(this, this, tvShows);
 
         // Check for network connectivity
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
         NetworkInfo activeNetorkInfo = connectivityManager.getActiveNetworkInfo();
-        if(activeNetorkInfo != null && !activeNetorkInfo.isConnected())
-        {
+        if (activeNetorkInfo != null && !activeNetorkInfo.isConnected()) {
             progressBar.setVisibility(View.GONE);
             recyclerView.setVisibility(View.GONE);
             textView_networkOffline.setVisibility(View.VISIBLE);
-        } else  {
+        } else {
             textView_networkOffline.setVisibility(View.GONE);
         }
 
-        if(savedInstanceState != null)
-        {
-            if(!data_type.equals("movies"))
+        if (savedInstanceState != null) {
+            if (!data_type.equals("movies"))
                 recyclerView.setAdapter(tvAdapter);
             else
                 recyclerView.setAdapter(adapter);
@@ -127,18 +124,18 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
 
         MenuItem menuItem = navigationView.getMenu().findItem(R.id.menu_title_movies);
         SpannableString s = new SpannableString(menuItem.getTitle());
-        s.setSpan(new ForegroundColorSpan(Color.WHITE),0,s.length(),0);
-        s.setSpan(new AbsoluteSizeSpan(20,true),0,s.length(),0);
+        s.setSpan(new ForegroundColorSpan(Color.WHITE), 0, s.length(), 0);
+        s.setSpan(new AbsoluteSizeSpan(20, true), 0, s.length(), 0);
         menuItem.setTitle(s);
 
         MenuItem item = navigationView.getMenu().findItem(R.id.menu_title_tvShows);
         SpannableString tv = new SpannableString(item.getTitle());
-        tv.setSpan(new ForegroundColorSpan(Color.WHITE),0,tv.length(),0);
-        tv.setSpan(new AbsoluteSizeSpan(20,true),0,tv.length(),0);
+        tv.setSpan(new ForegroundColorSpan(Color.WHITE), 0, tv.length(), 0);
+        tv.setSpan(new AbsoluteSizeSpan(20, true), 0, tv.length(), 0);
         item.setTitle(tv);
 
         // Retrofit Call
-        if(savedInstanceState == null)
+        if (savedInstanceState == null)
             getMovies(SORT_POPULARITY);
     }
 
@@ -149,24 +146,23 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId())
-                {
-                    case R.id.menu_popular_movies :
+                switch (item.getItemId()) {
+                    case R.id.menu_popular_movies:
                         drawer.closeDrawers();
                         setTitle("Popular Movies");
                         getMovies(SORT_POPULARITY);
                         return true;
-                    case R.id.menu_top_rated :
+                    case R.id.menu_top_rated:
                         drawer.closeDrawers();
                         setTitle("Top Rated");
                         getMovies(SORT_RATING);
                         return true;
-                    case R.id.menu_popular_shows :
+                    case R.id.menu_popular_shows:
                         Toast.makeText(MainActivity.this, "Popular Shows", Toast.LENGTH_SHORT).show();
                         drawer.closeDrawers();
                         getTv(SORT_POPULARITY);
                         return true;
-                    case R.id.menu_top_rated_shows :
+                    case R.id.menu_top_rated_shows:
                         Toast.makeText(MainActivity.this, "Top Rated Shows", Toast.LENGTH_SHORT).show();
                         drawer.closeDrawers();
                         getTv(SORT_RATING);
@@ -181,30 +177,30 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
 
     /**
      * Get list of tv shows.
+     *
      * @param path : Filter the tv shows according to popularity or top_rated.
      */
-    public void getTv(String path){
+    public void getTv(String path) {
         ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
-        Call<PopularTv> call = apiInterface.getTv(path,API_KEY);
+        Call<PopularTv> call = apiInterface.getTv(path, API_KEY);
         call.enqueue(new Callback<PopularTv>() {
             @Override
             public void onResponse(Call<PopularTv> call, retrofit2.Response<PopularTv> response) {
                 tvShows.clear();
                 PopularTv responseTv = response.body();
-                if(responseTv != null) {
+                if (responseTv != null) {
                     tvShows.addAll(responseTv.getResults());
-                    for(int i=0; i<tvShows.size();i++)
-                    {
+                    for (int i = 0; i < tvShows.size(); i++) {
                         TvResults result = tvShows.get(i);
-                        Log.d(TAG, result.getOriginal_name());
-                        if(!result.getOriginal_language().equals("en"))
+                        Log.d(TAG, result.getOriginalName());
+                        if (!result.getOriginalLanguage().equals("en"))
                             tvShows.remove(i);
                     }
                 }
                 recyclerView.setAdapter(tvAdapter);
                 tvAdapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);
-                Log.d(TAG, "onResponse: "+recyclerView.toString());
+                Log.d(TAG, "onResponse: " + recyclerView.toString());
             }
 
             @Override
@@ -216,23 +212,23 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
 
     /**
      * Get list of movies list.
+     *
      * @param sort_by : Filter movies either by popular or top_rated.
      */
-    public void getMovies(String sort_by){
+    public void getMovies(String sort_by) {
         ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
-        Call<Response> call = apiInterface.getMovies(sort_by,API_KEY);
+        Call<Response> call = apiInterface.getMovies(sort_by, API_KEY);
         call.enqueue(new Callback<Response>() {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                 movies.clear();
                 Response response1 = response.body();
                 movies.addAll(response1.getResults());
-                for(int i=0;i<movies.size();i++)
-                {
-                    if(movies.get(i).getPoster_path() == null ||
-                            movies.get(i).getPoster_path().contains("null") ||
+                for (int i = 0; i < movies.size(); i++) {
+                    if (movies.get(i).getPosterPath() == null ||
+                            movies.get(i).getPosterPath().contains("null") ||
                             movies.get(i).equals("null") ||
-                            !movies.get(i).getOriginal_language().equals("en"))
+                            !movies.get(i).getOriginalLanguage().equals("en"))
                         movies.remove(i);
                 }
                 recyclerView.setAdapter(adapter);
@@ -242,7 +238,7 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
 
             @Override
             public void onFailure(Call<Response> call, Throwable t) {
-                Log.v(TAG , "onFailure()");
+                Log.v(TAG, "onFailure()");
             }
         });
     }
@@ -250,7 +246,7 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        if(actionBarDrawerToggle.onOptionsItemSelected(item))
+        if (actionBarDrawerToggle.onOptionsItemSelected(item))
             return true;
 
         return super.onOptionsItemSelected(item);
@@ -258,37 +254,37 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
 
     /**
      * Save the instance of the state when user navigates away from the activity.
+     *
      * @param outState : Bundle in which the state is saved.
      */
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        if(recyclerView.toString().contains("TvAdapter")){
-            outState.putString("data_type","tv_shows");
+        if (recyclerView.toString().contains("TvAdapter")) {
+            outState.putString("data_type", "tv_shows");
             outState.putParcelableArrayList("tv_list", (ArrayList<TvResults>) tvShows);
-        }
-        else {
-            outState.putString("data_type","movies");
+        } else {
+            outState.putString("data_type", "movies");
             outState.putParcelableArrayList("movies_list", (ArrayList<Results>) movies);
         }
         long index = layoutManager.findFirstCompletelyVisibleItemPosition();
-        outState.putLong("index",index);
+        outState.putLong("index", index);
     }
 
     /**
      * Callback method for OnItemClickListener which handles the Movie item clicks.
+     *
      * @param movie : Movie item which was clicked.
      */
     @Override
     public void onClick(Results movie) {
         // If movie received is not null
-        if(movie != null)
-        {
+        if (movie != null) {
             // Open Details Activity to show the details of the movie.
             Intent intent = new Intent(MainActivity.this, DetailActivity.class);
-            intent.putExtra("id",movie.getId());
-            intent.putExtra("image_short", movie.getPoster_path());
+            intent.putExtra("id", movie.getId());
+            intent.putExtra("image_short", movie.getPosterPath());
             intent.putExtra("title", movie.getTitle());
-            intent.putExtra("data_type","movie");
+            intent.putExtra("data_type", "movie");
             startActivity(intent);
         } else {
             Log.d(TAG, "Movie clicked is null!");
@@ -297,18 +293,19 @@ public class MainActivity extends AppCompatActivity implements OnClickInterface,
 
     /**
      * Callback method for the OnTvClickInterface to handle tv show item clicks.
+     *
      * @param result : Tv show that was clicked.
      */
     @Override
     public void onTvItemClick(TvResults result) {
         // If tv show is not null
-        if(result != null){
+        if (result != null) {
             // Open Detail activity to show the details of the tv show.
             Intent intent = new Intent(MainActivity.this, DetailActivity.class);
-            intent.putExtra("id",result.getId());
-            intent.putExtra("image_short",result.getPoster_path());
-            intent.putExtra("title",result.getOriginal_name());
-            intent.putExtra("data_type","tv_show");
+            intent.putExtra("id", result.getId());
+            intent.putExtra("image_short", result.getPosterPath());
+            intent.putExtra("title", result.getOriginalName());
+            intent.putExtra("data_type", "tv_show");
             startActivity(intent);
         } else {
             Log.d(TAG, "Tv clicked is null");
